@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
+import { BaseTemplateProps } from '../models/template';
 
-class Template extends React.Component {
+class Template extends React.Component<BaseTemplateProps> {
   render() {
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
@@ -13,7 +14,7 @@ class Template extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
+            // ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}

@@ -6,18 +6,20 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
+import { TemplateProps } from '../models/template';
 
 class BlogIndex extends React.Component {
+  // class BlogIndex extends React.Component<TemplateProps<Index>> {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    // const siteTitle = get(this, 'props.data.site.siteMetadata.title') as string
+    // const posts = get(this, 'props.data.allMarkdownRemark.edges') as Array<Post>
 
     return (
       <Layout location={this.props.location}>
-        <Helmet title={siteTitle} />
+        <Helmet title={this.props.data.site.siteMetadata.title} />
         <Bio />
-        {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
+        {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
               <h3
@@ -64,3 +66,26 @@ export const pageQuery = graphql`
     }
   }
 `
+
+// GraphQL node type
+// type Index = {
+//   site:{
+//     siteMetadata:{
+//       title: string
+//     }
+//   }
+//   allMarkdownRemark:{
+//     edges:{
+//       node:{
+//         excerpt: string,
+//         fields:{
+//           slug: string
+//         }
+//         frontmatter: {
+//           date: string,
+//           title: string
+//         }
+//       }
+//     }[]
+//   }
+// }

@@ -3,7 +3,7 @@ import React from 'react'
 // Import typefaces
 import 'typeface-lato'
 
-import profilePic from './profile-pic.jpg'
+import * as profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 
 class Bio extends React.Component {

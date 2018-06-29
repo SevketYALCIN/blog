@@ -5,7 +5,7 @@ module.exports = {
     description: 'I write about web technologies, mainly Javascript.',
     siteUrl: 'https://sevketyalcin.github.io',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -51,7 +51,9 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
+        omitGoogleFont: true
       },
     },
+    `gatsby-plugin-typescript`
   ],
 }
