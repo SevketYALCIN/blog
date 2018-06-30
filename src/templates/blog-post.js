@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
-import { get } from 'lodash'
+import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
@@ -12,7 +11,7 @@ class BlogPostTemplate extends React.Component {
   // class BlogPostTemplate extends React.Component<TemplateProps<BlogPost>> {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
     return (

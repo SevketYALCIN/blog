@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Sevket Yalcin\'s blog',
+    title: 'Sevket Yalcin | Blog',
     author: 'Sevket Yalcin',
     description: 'I write about web technologies, mainly Javascript.',
     siteUrl: 'https://sevketyalcin.github.io',
@@ -54,6 +54,7 @@ module.exports = {
         omitGoogleFont: true
       },
     },
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-sass`
   ],
 }
