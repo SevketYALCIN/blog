@@ -1,36 +1,19 @@
-import React from 'react'
+import React from "react"
 
-// Import typefaces
-import 'typeface-lato'
-
-import * as profilePic from './profile-pic.jpg'
-import { rhythm } from '../utils/typography'
+import * as profilePic from "./profile-pic.jpg"
 
 class Bio extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          marginBottom: rhythm(2.5),
-        }}
-      >
+      <div>
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
+          alt={`Sevket Yalcin`}
         />
         <p>
           Written by <strong>Kyle Mathews</strong> who lives and works in San
-          Francisco building useful things.{' '}
-          <a href="https://twitter.com/kylemathews">
-            You should follow him on Twitter
-          </a>
+          Francisco building useful things.
+          {/* Links to Github Twitter Email */}
         </p>
       </div>
     )

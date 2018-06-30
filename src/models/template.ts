@@ -6,5 +6,5 @@ export interface BaseTemplateProps {
     location: {
         pathname: string
     },
-    pageContext?: any;
+    pageContext?: any
 }
