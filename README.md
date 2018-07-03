@@ -1,6 +1,6 @@
 # Blog
 - React, Typescript, Sass
-- Gatsby v2 + gatsby-starter-blog (https://github.com/gatsbyjs/gatsby-starter-blog)
+- Gatsby v2 + gatsby-starter-blog (React, graphql)
 - Typography.js
 
 ## Running in development
