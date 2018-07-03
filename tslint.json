@@ -8,8 +8,7 @@
     "member-access": [false],
     "ordered-imports": [true],
     "no-console": [false],
-    "no-var-requires": true,
-    "quotemark": [true, "double", "jsx-double"]
+    "no-var-requires": true
   },
   "rulesDirectory": []
 }

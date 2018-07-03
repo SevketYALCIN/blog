@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
 import React from "react"
-import { BaseTemplateProps } from "../models/template"
+import { Helmet } from "react-helmet"
+import { BaseTemplateProps } from "../../models/template"
 import * as github from "./github.png"
 import "./layout.scss"
 import * as mail from "./mail.png"
 import * as twitter from "./twitter.png"
-import { Helmet } from "react-helmet";
 
 class Template extends React.Component<BaseTemplateProps> {
   render() {

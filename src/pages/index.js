@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
+import { graphql } from 'gatsby'
+import Bio from '../components/bio/bio'
+import Layout from '../components/layout/layout'
 // import { TemplateProps } from '../models/template';
 import SEO from '../utils/seo'
+import ArticleBlock from '../components/article-block/article-block'
 
 class BlogIndex extends React.Component {
   // class BlogIndex extends React.Component<TemplateProps<Index>> {
@@ -23,18 +23,13 @@ class BlogIndex extends React.Component {
         <SEO {...this.indexSeo} />
         <Bio />
         {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
+          const props = {
+            title: node.frontmatter.title || node.fields.slug,
+            slug: node.fields.slug,
+            date: node.frontmatter.date,
+            excerpt: node.excerpt
+          }
+          return <ArticleBlock {...props} />
         })}
       </Layout>
     )

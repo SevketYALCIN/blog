@@ -1,0 +1,20 @@
+.article {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 10px rgba(25, 17, 34, 0.05);
+    position: relative;
+
+    h3{
+        margin-top: 0;
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+}

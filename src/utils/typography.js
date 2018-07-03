@@ -1,6 +1,12 @@
 import Typography from 'typography'
 import githubTheme from 'typography-theme-github'
- 
+
+githubTheme.overrideThemeStyles = () => ({
+  'body': {
+    background: "#fbfafc"
+  }
+})
+
 const typography = new Typography(githubTheme)
 
 // Hot reload typography in development.

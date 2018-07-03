@@ -1,9 +1,7 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import { rhythm } from '../utils/typography'
 // import { TemplateProps } from '../models/template';
 

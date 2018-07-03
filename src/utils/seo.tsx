@@ -24,17 +24,17 @@ class SEO extends React.Component<SeoProps> {
         <meta name="twitter:description" content={this.props.description} />
         <meta name="twitter:image" content={this.props.image} />
       </Helmet>
-    );
+    )
   }
-};
+}
 
-type SeoProps = {
-    title: string;
-    description: string;
-    image: string;
-    url: string;
-    isBlogpost: boolean;
-    twitter: string;
+interface SeoProps {
+    title: string
+    description: string
+    image: string
+    url: string
+    isBlogpost: boolean
+    twitter: string
 }
 
 export default SEO
