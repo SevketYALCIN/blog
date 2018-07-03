@@ -5,7 +5,7 @@ import './article-block.scss'
 export default class ArticleBlock extends React.Component<ArticleBlockProps> {
     render(){
         return (
-            <div key={this.props.slug} className="article">
+            <div className="article">
               <h3>
                 {this.props.title}
               </h3>

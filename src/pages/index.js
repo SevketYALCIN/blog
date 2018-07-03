@@ -23,13 +23,13 @@ class BlogIndex extends React.Component {
         <SEO {...this.indexSeo} />
         <Bio />
         {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
-          const props = {
+          const articleProps = {
             title: node.frontmatter.title || node.fields.slug,
             slug: node.fields.slug,
             date: node.frontmatter.date,
             excerpt: node.excerpt
           }
-          return <ArticleBlock {...props} />
+          return <ArticleBlock {...articleProps} key={articleProps.slug}/>
         })}
       </Layout>
     )
