@@ -2,8 +2,10 @@ module.exports = {
   siteMetadata: {
     title: 'Sevket Yalcin | Blog',
     author: 'Sevket Yalcin',
-    description: 'I write about web technologies, mainly Javascript.',
+    description: 'Full Stack Web Developer who lives and works in Tokyo. I build stuff on my free time using Javascript and blog about it here.',
     siteUrl: 'https://sevketyalcin.github.io',
+    twitter: '@sev_yalcin',
+    image: '/images/profile_pic.jpg',
   },
   pathPrefix: '/blog',
   plugins: [

@@ -1,20 +1,26 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 // import { TemplateProps } from '../models/template';
+import SEO from '../utils/seo'
 
 class BlogIndex extends React.Component {
   // class BlogIndex extends React.Component<TemplateProps<Index>> {
-  render() {
-    // const siteTitle = get(this, 'props.data.site.siteMetadata.title') as string
-    // const posts = get(this, 'props.data.allMarkdownRemark.edges') as Array<Post>
+  indexSeo = {
+    title: this.props.data.site.siteMetadata.title,
+    description: this.props.data.site.siteMetadata.description,
+    image: this.props.data.site.siteMetadata.image,
+    url: this.props.data.site.siteMetadata.siteUrl,
+    isBlogpost: false,
+    twitter: this.props.data.site.siteMetadata.twitter
+  }
 
+  render() {
     return (
       <Layout location={this.props.location}>
-        <Helmet title={this.props.data.site.siteMetadata.title} />
+        <SEO {...this.indexSeo} />
         <Bio />
         {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -42,6 +48,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        image
+        siteUrl
+        twitter
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
