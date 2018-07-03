@@ -4,6 +4,15 @@ import githubTheme from 'typography-theme-github'
 githubTheme.overrideThemeStyles = () => ({
   'body': {
     background: "#fbfafc"
+  },
+  'a, strong': {
+    color: "#fb1d1d"
+  },
+  'ul': {
+    display: "flex",
+    justifyContent: "space-between",
+    listStyle: "none",
+    marginLeft: 0
   }
 })
 
