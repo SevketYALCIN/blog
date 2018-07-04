@@ -1,20 +1,29 @@
 import * as React from 'react'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import { rhythm } from '../utils/typography'
+import SEO from '../utils/seo'
 // import { TemplateProps } from '../models/template';
 
 class BlogPostTemplate extends React.Component {
   // class BlogPostTemplate extends React.Component<TemplateProps<BlogPost>> {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const siteMeta = this.props.data.site.siteMetadata
     const { previous, next } = this.props.pageContext
+
+    const indexSeo = {
+      title: `${post.frontmatter.title} | ${siteMeta.title}`,
+      description: post.excerpt,
+      image: siteMeta.image,
+      url: `${this.props.data.site.siteMetadata.siteUrl}${post.fields.slug}`,
+      isBlogpost: true,
+      twitter: siteMeta.twitter
+    }
 
     return (
       <Layout location={this.props.location}>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <SEO { ...indexSeo } />
         <h1>{post.frontmatter.title}</h1>
         <p>
           {post.frontmatter.date}
@@ -56,11 +65,20 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        title
+        description
+        image
+        siteUrl
+        twitter
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      excerpt
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
