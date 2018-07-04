@@ -1,6 +1,7 @@
 .article-footer{
-    margin: 0;
+    margin-left: 0;
     list-style: none;
+    margin-bottom: 2rem;
 
     li.previous{
         float: left;
@@ -10,5 +11,11 @@
     li.next{
         float: right;
         text-align: right;
+    }
+
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
     }
 }
