@@ -7,12 +7,6 @@ githubTheme.overrideThemeStyles = () => ({
   },
   'a, strong': {
     color: "#fb1d1d"
-  },
-  'ul': {
-    display: "flex",
-    justifyContent: "space-between",
-    listStyle: "none",
-    marginLeft: 0
   }
 })
 
