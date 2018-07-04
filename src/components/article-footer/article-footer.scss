@@ -1,0 +1,14 @@
+.article-footer{
+    margin: 0;
+    list-style: none;
+
+    li.previous{
+        float: left;
+        text-align: left;
+    }
+
+    li.next{
+        float: right;
+        text-align: right;
+    }
+}

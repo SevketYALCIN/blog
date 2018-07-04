@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import { rhythm } from '../utils/typography'
 import SEO from '../utils/seo'
+import ArticleFooter from '../components/article-footer/article-footer'
 // import { TemplateProps } from '../models/template';
 
 class BlogPostTemplate extends React.Component {
@@ -34,24 +35,9 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-
-        <ul>
-          {previous && (
-            <li>
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            </li>
-          )}
-
-          {next && (
-            <li>
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            </li>
-          )}
-        </ul>
+        <ArticleFooter 
+          next={next ? {slug: next.fields.slug, title: next.frontmatter.title} : null} 
+          previous={previous ? {slug: previous.fields.slug, title: previous.frontmatter.title}: null} />
       </Layout>
     )
   }
