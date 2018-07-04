@@ -7,7 +7,6 @@ module.exports = {
     twitter: '@sev_yalcin',
     image: '/images/profile_pic.jpg',
   },
-  pathPrefix: '/blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
