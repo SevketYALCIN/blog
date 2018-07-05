@@ -27,7 +27,8 @@ class BlogIndex extends React.Component {
             title: node.frontmatter.title || node.fields.slug,
             slug: node.fields.slug,
             date: node.frontmatter.date,
-            excerpt: node.excerpt
+            excerpt: node.excerpt,
+            tags: node.frontmatter.tags
           }
           return <ArticleBlock {...articleProps} key={articleProps.slug}/>
         })}

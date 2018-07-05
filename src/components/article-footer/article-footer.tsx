@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { Link } from 'gatsby'
+import * as React from 'react'
 import './article-footer.scss'
 
 export default class ArticleFooter extends React.Component<ArticleFooterProps>  {

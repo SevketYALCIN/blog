@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../utils/seo'
 import ArticleFooter from '../components/article-footer/article-footer'
+import TagsBlock from '../components/tags-block/tags-block'
 // import { TemplateProps } from '../models/template';
 
 class BlogPostTemplate extends React.Component {
@@ -27,6 +28,7 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
         <p>
           {post.frontmatter.date}
+          <TagsBlock tags={post.frontmatter.tags} floatRight={true}/>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>
@@ -63,6 +65,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

@@ -21,7 +21,7 @@ export default class Tags extends React.Component {
           <SEO { ...seoTags } />
           <h1>{`${tag} (${totalCount})`}</h1>
           {edges.map(({ node }) => {
-            const { title, date } = node.frontmatter;
+            const { title, date, tags } = node.frontmatter;
             const { slug } = node.fields;
             const excerpt = node.excerpt;
             return (
@@ -29,7 +29,9 @@ export default class Tags extends React.Component {
                 date={date}
                 title={title}
                 slug={slug}
-                excerpt={excerpt}  
+                excerpt={excerpt}
+                key={slug}
+                tags={tags}
               />
             );
           })}
@@ -62,6 +64,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            tags
             date(formatString: "MMMM DD, YYYY")
           }
         }
