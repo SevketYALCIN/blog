@@ -1,5 +1,5 @@
-import { Link } from 'gatsby'
 import * as React from 'react'
+import './link-menu.scss'
 
 export default class LinkMenu extends React.Component {
     render() {
