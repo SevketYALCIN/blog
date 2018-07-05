@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
-import { rhythm } from '../utils/typography'
 import SEO from '../utils/seo'
 import ArticleFooter from '../components/article-footer/article-footer'
 // import { TemplateProps } from '../models/template';
@@ -30,11 +29,7 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr/>
         <ArticleFooter 
           next={next ? {slug: next.fields.slug, title: next.frontmatter.title} : null} 
           previous={previous ? {slug: previous.fields.slug, title: previous.frontmatter.title}: null} />
