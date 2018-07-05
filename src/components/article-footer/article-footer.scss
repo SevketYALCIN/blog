@@ -18,4 +18,10 @@
         display: table;
         clear: both;
     }
+
+    @media screen and (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+    }
 }
+
