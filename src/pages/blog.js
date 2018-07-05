@@ -8,19 +8,19 @@ import ArticleBlock from '../components/article-block/article-block'
 
 class BlogIndex extends React.Component {
   // class BlogIndex extends React.Component<TemplateProps<Index>> {
-  indexSeo = {
-    title: `Blog | ${this.props.data.site.siteMetadata.title}`,
-    description: this.props.data.site.siteMetadata.description,
-    image: this.props.data.site.siteMetadata.image,
-    url: `${this.props.data.site.siteMetadata.siteUrl}/blog/`,
-    isBlogpost: false,
-    twitter: this.props.data.site.siteMetadata.twitter
-  }
 
   render() {
+    const indexSeo = {
+      title: `Blog | ${this.props.data.site.siteMetadata.title}`,
+      description: this.props.data.site.siteMetadata.description,
+      image: this.props.data.site.siteMetadata.image,
+      url: `${this.props.data.site.siteMetadata.siteUrl}/blog/`,
+      isBlogpost: false,
+      twitter: this.props.data.site.siteMetadata.twitter
+    }
     return (
       <Layout location={this.props.location}>
-        <SEO {...this.indexSeo} />
+        <SEO {...indexSeo} />
         <Bio />
         {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
           const articleProps = {
@@ -59,6 +59,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            tags
           }
         }
       }
