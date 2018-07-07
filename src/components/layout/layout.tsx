@@ -11,12 +11,24 @@ class Template extends React.Component<BaseTemplateProps> {
   render() {
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
+    let goTo
     let title
+    switch(location.pathname){
+      case rootPath:
+        goTo = '/'
+        break
+      case rootPath + '/blog' || rootPath + '/blog/':
+        goTo = '/'
+        break
+      default:
+        goTo = '/blog/'
+        break
+    }
 
     if(location.pathname === rootPath) {
       title = (
       <h1>
-        <Link to={"/"}>
+        <Link to={goTo}>
           SEVKET YALCIN
         </Link>
       </h1>)
@@ -24,7 +36,7 @@ class Template extends React.Component<BaseTemplateProps> {
     else {
       title = (
         <h3>
-          <Link to={"/"}>
+          <Link to={goTo}>
             SEVKET YALCIN
           </Link>
         </h3>)
