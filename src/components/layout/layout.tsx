@@ -1,4 +1,6 @@
 import { Link } from "gatsby"
+// tslint:disable-next-line:no-submodule-imports
+import 'prismjs/themes/prism-tomorrow.css'
 import React from "react"
 import { Helmet } from "react-helmet"
 import { BaseTemplateProps } from "../../models/template"
