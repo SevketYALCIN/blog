@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Helmet from 'react-helmet';
+import Helmet from 'react-helmet'
 
 class SEO extends React.Component<SeoProps> {    
     render() {
