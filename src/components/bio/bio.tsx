@@ -1,12 +1,13 @@
 import React from "react"
 import "./bio.scss"
+import * as ProfilePic from "./profile-pic.jpg"
 
 class Bio extends React.Component {
   render() {
     return (
       <div className="bio">
         <img
-          src='/profile-pic.jpg'
+          src={ProfilePic}
           alt={`Sevket Yalcin`}
         />
         <p>
