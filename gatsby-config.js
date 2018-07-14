@@ -3,9 +3,9 @@ module.exports = {
     title: 'Sevket Yalcin',
     author: 'Sevket Yalcin',
     description: 'Full Stack Web Developer who lives and works in Tokyo. I build stuff on my free time and blog about it here.',
-    siteUrl: 'https://sevketyalcin.github.io',
+    siteUrl: 'https://sevketyalcin.com',
     twitter: '@sev_yalcin',
-    image: 'https://sevketyalcin.github.io/profile_pic.jpg',
+    image: 'https://lh3.googleusercontent.com/NUDV52VqjIcOIFLdaP_pOfb2qfJ7TnaR8-ysRw-BX4Gs4LhLTsygGy0Vmb9mWIvFSsYSHj_BnIs',
   },
   plugins: [
     {
