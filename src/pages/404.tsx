@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from '../components/layout/layout'
+import { BaseTemplateProps } from '../models/template'
 
-class NotFoundPage extends React.Component {
+class NotFoundPage extends React.Component<BaseTemplateProps> {
   render(){
     return (
     <Layout location={this.props.location}>

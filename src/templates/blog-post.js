@@ -4,10 +4,9 @@ import Layout from '../components/layout/layout'
 import SEO from '../utils/seo'
 import ArticleFooter from '../components/article-footer/article-footer'
 import TagsBlock from '../components/tags-block/tags-block'
-// import { TemplateProps } from '../models/template';
+import * as Disqus from 'disqus-react';
 
 class BlogPostTemplate extends React.Component {
-  // class BlogPostTemplate extends React.Component<TemplateProps<BlogPost>> {
   render() {
     const post = this.props.data.markdownRemark
     const siteMeta = this.props.data.site.siteMetadata
@@ -22,6 +21,13 @@ class BlogPostTemplate extends React.Component {
       twitter: siteMeta.twitter
     }
 
+    const disqusShortname = `https-sevketyalcin-com`
+    const disqusConfig = {
+        url: indexSeo.url,
+        identifier: post.fields.slug,
+        title: post.frontmatter.title,
+    };
+
     return (
       <Layout location={this.props.location}>
         <SEO { ...indexSeo } />
@@ -32,6 +38,9 @@ class BlogPostTemplate extends React.Component {
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>
+        <div className="article">
+          <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </div>
         <ArticleFooter 
           next={next ? {slug: next.fields.slug, title: next.frontmatter.title} : null} 
           previous={previous ? {slug: previous.fields.slug, title: previous.frontmatter.title}: null} />
@@ -70,21 +79,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// GraphQL node type
-// type BlogPost = {
-//   site:{
-//     siteMetadata:{
-//       title: string,
-//       author: string
-//     }
-//   }
-//   markdownRemark:{
-//     id: string,
-//     html: string,
-//     frontmatter: {
-//       title: string,
-//       date: string
-//     }
-//   }
-// }
