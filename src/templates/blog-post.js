@@ -29,14 +29,14 @@ class BlogPostTemplate extends React.Component {
     };
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} itemscope itemtype="http://schema.org/BlogPosting">
         <SEO { ...indexSeo } />
         <h1>{post.frontmatter.title}</h1>
         <p>
-          {post.frontmatter.date}
-          <TagsBlock tags={post.frontmatter.tags}/>
+          <span itemprop="date">{post.frontmatter.date}</span>
+          <TagsBlock tags={post.frontmatter.tags} itemprop="keywords"/>
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div itemprop="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>
         <div className="article">
           <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
