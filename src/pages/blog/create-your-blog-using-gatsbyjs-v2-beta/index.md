@@ -672,5 +672,3 @@ After running `gatsby build`, you will have a simple yet nice little static blog
 GatsbyJS is really a powerful, magic framework. The GatsbyJS team and community is working every day to make it even easier to use with more and more features. I really enjoyed building this blog with GatsbyJS and will keep improving it. GatsbyJS is my go-to framework for static websites!
 
 _Thank you for reading! This is my first blogpost ever, all your comments and suggestions are welcome!_
-
--- Sevket Yalcin

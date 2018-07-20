@@ -32,12 +32,13 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div itemscope itemtype="http://schema.org/BlogPosting">
           <SEO { ...indexSeo } />
-          <h1>{post.frontmatter.title}</h1>
+          <h1 itemprop="headline">{post.frontmatter.title}</h1>
           <p>
-            <span itemprop="date">{post.frontmatter.date}</span>
+            <span itemprop="datePublished">{post.frontmatter.date}</span>
             <span itemprop="keywords"><TagsBlock tags={post.frontmatter.tags}/></span>
           </p>
           <div itemprop="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div itemprop="author">- Sevket Yalcin</div>
           <hr/>
           <div className="article">
             <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
