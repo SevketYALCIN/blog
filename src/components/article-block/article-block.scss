@@ -2,7 +2,7 @@
     background: white;
     padding: 2rem;
     margin-bottom: 1rem;
-    box-shadow: 0 3px 10px rgba(25, 17, 34, 0.05);
+    box-shadow: 0 3px 10px rgba(34, 17, 17, 0.05);
     position: relative;
 
     h3{
@@ -17,5 +17,9 @@
         bottom: 0;
         overflow: hidden;
         z-index: 0;
+    }
+
+    &:hover{
+        box-shadow: 0 3px 10px rgba(34, 17, 17, 0.15);
     }
 }
