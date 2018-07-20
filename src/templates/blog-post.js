@@ -34,7 +34,7 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
         <p>
           {post.frontmatter.date}
-          <TagsBlock tags={post.frontmatter.tags} floatRight={true}/>
+          <TagsBlock tags={post.frontmatter.tags}/>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>

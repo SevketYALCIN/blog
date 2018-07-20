@@ -6,7 +6,7 @@ import './tags-block.scss'
 export default class TagsBlock extends React.Component<TagsBlockProps> {
     render() {
         return (
-            <div className='tags' style={ this.props.floatRight ? { float: "right"} : {} }>
+            <div className='tags'>
                 <span>Tagged with </span>
                 { this.props.tags.map((tag, index) => {
                         return (<span key={tag}>
@@ -25,5 +25,4 @@ export default class TagsBlock extends React.Component<TagsBlockProps> {
 
 interface TagsBlockProps {
     tags: string[]
-    floatRight?: boolean
 }
