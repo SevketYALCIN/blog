@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     const indexSeo = {
-      title: `${post.frontmatter.title} | ${siteMeta.title}`,
+      title: `${post.frontmatter.title}`,
       description: post.excerpt,
       image: siteMeta.image,
       url: `${this.props.data.site.siteMetadata.siteUrl}${post.fields.slug}`,

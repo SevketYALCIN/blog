@@ -1,39 +1,39 @@
 ---
-title: "How to create your blog using GatsbyJS (V2 Beta)"
+title: "Create your blog using GatsbyJS (v2 beta)"
 date: "2018-07-21"
 tags: ["GatsbyJS", "React", "GraphQL", "Markdown"]
 ---
 
-I recently found out about [GatsbyJS](https://www.gatsbyjs.org/) after they announced Gatsby V2 Beta. Having a blog and posting about stuff I work on has been on my to-do list for too long, so I decided to build a blog using Gatsby! This first post is a step-by-step guide on how I built this blog.
+I recently found out about [GatsbyJS](https://www.gatsbyjs.org/ "GatsbyJS website") after they announced GatsbyJS V2 Beta. Having a blog and posting about stuff I work on has been on my to-do list for too long, so I decided to build a blog using GatsbyJS! This first post is a step-by-step guide on how I built this blog using the v2 beta.
 	
 ## GatsbyJS
 
-Gatsby is a JavaScript web framework that lets you build fast websites and automatically optimizes them using modern web performance ideas (e.g. [PRPL Pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/)).
+GatsbyJS is a JavaScript web framework that lets you build fast websites and automatically optimizes them using modern web performance ideas (e.g. [PRPL Pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/ "PRPL Google")).
 
-Gatsby is really simple, the configuration is handled by the framework and the plugins. All you have to do is:
-- Build your website using [React](https://reactjs.org/) components
-- Pull your data from any source into your pages using [GraphQL](https://graphql.org/)
+GatsbyJS is really simple, the configuration is handled by the framework and the plugins. All you have to do is:
+- Build your website using [React](https://reactjs.org/ "ReactJS website") components
+- Pull your data from any source into your pages using [GraphQL](https://graphql.org/ "GraphQL website")
 - Build an optimized website as static files ready to be deployed using the Gatsby CLI
 
-You can find Gatsby's features in detail [here](https://www.gatsbyjs.org/features/), compared to popular alternatives.
+You can find Gatsby's features in detail [here](https://www.gatsbyjs.org/features/ "GatsbyJS features"), compared to popular alternatives.
 
 ### Plugins
 
 Plugins are Node.js packages that implement Gatsby APIs. They enable you to easily add features to your Gatsby app such as: setup Sass, adding Typescript, etc. 
 
-Gatsby has a large set of plugins, take a look at the [Plugin Library](https://www.gatsbyjs.org/plugins/). 
+GatsbyJS has a large set of plugins, take a look at the [Plugin Library](https://www.gatsbyjs.org/plugins/ "GatsbyJS plugin library"). 
 
 ### Starters
 
 When creating a new site, you can optionally specify a starter to base your new site on.
 
-There are 3 official starters and many others maintained by the community, you can find the list [here](https://next.gatsbyjs.org/docs/gatsby-starters/#gatsby-starters). 
+There are 3 official starters and many others maintained by the community, you can find the list [here](https://next.gatsbyjs.org/docs/gatsby-starters/#gatsby-starters "GatsbyJS starters"). 
 
 In this tutorial, we are going to use the `gatsby-starter-blog` official blog starter since it is already configured with all the necessary plugins to get your blog started.
 
 ### Markdown
 
-This blogpost is a [Markdown](https://en.wikipedia.org/wiki/Markdown) file that has been transformed into a page programmatically. It looks like this:
+This blogpost is a [Markdown](https://en.wikipedia.org/wiki/Markdown "Markdown wikipedia") file that has been transformed into a page programmatically. It looks like this:
 ```md
 ---
 title: "How to create your blog using GatsbyJS (V2 Beta)"
@@ -41,13 +41,13 @@ date: "2018-07-21"
 tags: ["GatsbyJS", "React", "GraphQL", "Markdown"]
 ---
 
-I recently found out about [GatsbyJS](https://www.gatsbyjs.org/) [...]
+I recently found out about GatsbyJS [...]
 ```
 At the top of the file, we have YAML-formatted key value pairs that are relevant to the blogpost called **frontmatter**. The rest of the file is the content of the blogpost in Markdown format.
 
 To make the transformation happen :
 
-- We read files into Gatsby from the filesystem using the `gatsby-source-filesystem` plugin.
+- We read files into GatsbyJS from the filesystem using the `gatsby-source-filesystem` plugin.
 - We transform markdown to HTML and frontmatter to data using the `gatsby-transformer-remark` plugin.
 - We programmatically create pages using Gatsby’s APIs
 
@@ -59,7 +59,7 @@ Get Gatsby CLI
 npm install --global gatsby-cli
 ```
 
-Create your blog using the Gatsby V2's official blog starter
+Create your blog using the GatsbyJS V2 beta's official blog starter
 
 ``` 
 gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog#v2
@@ -100,7 +100,7 @@ Pages can be created in many ways.
 
 ### Automatically creating pages
 
-Gatsby core automatically turns React components in `src/pages` into pages:
+GatsbyJS core automatically turns React components in `src/pages` into pages:
 ```
 pages/
   index.js
@@ -189,7 +189,7 @@ The index page queries markdown files and produces a list of blog post titles an
 - A React component rendering a layout, a bio and a list of blogposts using props.
 - A GraphQL query, pulling the data page components need.
 
-[GraphQL](https://graphql.org/) is a query language similar to SQL. You describe the data you want in your component and then that data is given to you.
+GraphQL is a query language similar to SQL. You describe the data you want in your component and then that data is given to you.
 In Gatsby, the result of the query is automatically inserted into your React component on the `data` prop.
 
 In the first part of the query, we're pulling the `siteMetadata`: 
@@ -247,7 +247,7 @@ GraphiQL is available on your development server at `http://localhost:8000/___gr
 
 ![GraphiQL IDE](./blogpost-2.png "GraphiQL IDE")
 
-If it's your first time seeing GraphQL, [this tutorial](https://graphql.org/learn/) is a good way to start.
+If it's your first time seeing GraphQL, [this tutorial](https://graphql.org/learn/ "Learn GraphQL") is a good way to start.
 
 ### Programmatically creating pages
 
@@ -359,7 +359,7 @@ When dynamically creating pages using Gatsby APIs, we can pass additional data t
 
 #### Create static pages
 
-Gatsby exposes a powerful [Node.js API](https://www.gatsbyjs.org/docs/node-apis/). This API is available in the gatsby-node.js file in the root directory of your project. Each export found in this file will be run by Gatsby.
+GatsbyJS exposes a powerful [Node.js API](https://www.gatsbyjs.org/docs/node-apis/ "Gatsby Node APIs"). This API is available in the gatsby-node.js file in the root directory of your project. Each export found in this file will be run by Gatsby.
 
 In this case, we only care about the `createPages` and the `onCreateNode` APIs:
 
@@ -454,17 +454,17 @@ We now know how to create pages, let's add some style.
 ## Adding Style
 
 When it comes to adding style, you have a lot of options:
-- Classic: [Less](https://www.gatsbyjs.org/packages/gatsby-plugin-less/) / [Sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/)
-- CSS-in-JS: [Glamor](https://www.gatsbyjs.org/docs/glamor/) / [Styled Components](https://www.gatsbyjs.org/docs/styled-components/)
-- [CSS Modules](https://www.gatsbyjs.org/tutorial/part-two/#css-modules)
-- [Typography.js](https://github.com/kyleamathews/typography.js)
+- Classic: [Less](https://www.gatsbyjs.org/packages/gatsby-plugin-less/ "Less website") / [Sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/ "Sass website")
+- CSS-in-JS: [Glamor](https://www.gatsbyjs.org/docs/glamor/ "Glamor website") / [Styled Components](https://www.gatsbyjs.org/docs/styled-components/ "Styled Components website")
+- [CSS Modules](https://www.gatsbyjs.org/tutorial/part-two/#css-modules "CSS Modules website")
+- [Typography.js](https://github.com/kyleamathews/typography.js "Typography.js website")
 
 In my case, I didn't want to add too much new stuff to my code and steepen my learning curve so I decided to stick with **Sass** and spice it up a little bit with **Typography.js**
 
 ### Typography.js
 
 Typography.js is a JavaScript library which generates the base CSS for all your elements. It makes it easy to create a global custom and unique design to your project.
-Typography also has more than 30 ready-to-use themes you can install as Node.js packages. You can play with them [here](http://kyleamathews.github.io/typography.js/). Using a theme you like as a base and overriding it is a good way to have a nice looking blog without much effort. 
+Typography also has more than 30 ready-to-use themes you can install as Node.js packages. You can play with them [here](http://kyleamathews.github.io/typography.js/ "Typography playground"). Using a theme you like as a base and overriding it is a good way to have a nice looking blog without much effort. 
 
 That's exactly what's done in the Gatsby Blog Starter thanks to the Typography Gatsby Plugin already installed in `gatsby-config.js`:
 ```js
@@ -531,7 +531,7 @@ export default typography
 
 ### Setup Sass
 
-To setup [Sass](https://sass-lang.com/), you only need to install the `gatsby-plugin-sass` and all the configuration will be handled by Gatsby.
+To setup Sass, you only need to install the `gatsby-plugin-sass` and all the configuration will be handled by Gatsby.
 
 Install the plugin
 ```bash
@@ -549,7 +549,7 @@ Now you can create `.scss` files and import them!
 
 ## Adding simple SEO
 
-The final step is adding simple SEO to your blog using [React Helmet](https://github.com/nfl/react-helmet) and the [React Helmet Gatsby plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/). The React Helmet package as well as the Gatsby plugin are already installed since we used the blog starter. 
+The final step is adding simple SEO to your blog using [React Helmet](https://github.com/nfl/react-helmet "React Helmet Github") and the [React Helmet Gatsby plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/ "React Helmet Plugin"). The React Helmet package as well as the Gatsby plugin are already installed since we used the blog starter. 
 
 To implement the basic SEO meta tags, I created a simple React component using props to render the tags:
 
@@ -667,10 +667,10 @@ export const pageQuery = graphql`
 
 ## Conclusion
 
-After running `gatsby build`, you will have a simple yet nice little static blog ready to be deployed inside the `public/` folder. I highly recommend [Netlify](https://www.netlify.com/) as your static hosting platform. With Netlify, you can easily setup continuous integration from your Github repository!
+After running `gatsby build`, you will have a simple yet nice little static blog ready to be deployed inside the `public/` folder. I highly recommend [Netlify](https://www.netlify.com/ "Netlify website") as your static hosting platform. With Netlify, you can easily setup continuous integration from your Github repository!
 
-Gatsby is really a powerful, magic framework. The Gatsby team and community is working every day to make it even easier to use with more and more features. I really enjoyed building this blog with Gatsby and will keep improving it. Gatsby is my go-to framework for static websites!
+GatsbyJS is really a powerful, magic framework. The GatsbyJS team and community is working every day to make it even easier to use with more and more features. I really enjoyed building this blog with GatsbyJS and will keep improving it. GatsbyJS is my go-to framework for static websites!
 
 _Thank you for reading! This is my first blogpost ever, all your comments and suggestions are welcome!_
 
--- Sevket
+-- Sevket Yalcin

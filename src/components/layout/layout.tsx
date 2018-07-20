@@ -48,13 +48,13 @@ class Template extends React.Component<BaseTemplateProps> {
         {title}
         <div>
           <a target="blank" href="https://github.com/SevketYALCIN">
-            <img src={github} />
+            <img src={github} alt='My Github' />
           </a>
           <a target="blank" href="https://twitter.com/sev_yalcin">
-            <img src={twitter} />
+            <img src={twitter} alt='My Twitter'/>
           </a>
           <a href="mailto:sevket.yalcin@outlook.com">
-            <img src={mail} />
+            <img src={mail}  alt='My E-Mail'/>
           </a>
         </div>
       </div>
