@@ -7,6 +7,10 @@ githubTheme.overrideThemeStyles = () => ({
   },
   'a, strong': {
     color: "#fb1d1d"
+  },
+  '.layout :not(pre) > code[class*="language-"]': {
+    padding: "3px .1em",
+    borderRadius: "0"
   }
 })
 
