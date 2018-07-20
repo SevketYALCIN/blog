@@ -10,7 +10,7 @@ export default class TagsBlock extends React.Component<TagsBlockProps> {
                 <span>Tagged with </span>
                 { this.props.tags.map((tag, index) => {
                         return (<span key={tag}>
-                            <Link to={`/blog/tags/${kebabCase(tag)}`} className='tag'> 
+                            <Link to={`/blog/tags/${kebabCase(tag)}`} className='tag' title={`Go to ${tag} tag page`}> 
                                 {`${tag}`}
                             </Link>
                             {this.props.tags[index+1] ? ', ' : ''}

@@ -19,7 +19,7 @@ class Template extends React.Component<BaseTemplateProps> {
       case rootPath:
         goTo = '/'
         break
-      case rootPath + '/blog' || rootPath + '/blog/':
+      case rootPath + 'blog' || rootPath + 'blog/':
         goTo = '/'
         break
       default:
@@ -30,7 +30,7 @@ class Template extends React.Component<BaseTemplateProps> {
     if(location.pathname === rootPath) {
       title = (
       <h1>
-        <Link to={goTo}>
+        <Link to={goTo} title="Go to Home">
           SEVKET YALCIN
         </Link>
       </h1>)
@@ -38,7 +38,7 @@ class Template extends React.Component<BaseTemplateProps> {
     else {
       title = (
         <h3>
-          <Link to={goTo}>
+          <Link to={goTo} title="Go to Home">
             SEVKET YALCIN
           </Link>
         </h3>)
@@ -47,13 +47,13 @@ class Template extends React.Component<BaseTemplateProps> {
       <div className="header">
         {title}
         <div>
-          <a target="blank" href="https://github.com/SevketYALCIN">
+          <a target="blank" href="https://github.com/SevketYALCIN" title="Go to my Github">
             <img src={github} alt='My Github' />
           </a>
-          <a target="blank" href="https://twitter.com/sev_yalcin">
+          <a target="blank" href="https://twitter.com/sev_yalcin" title="Go to my Twitter">
             <img src={twitter} alt='My Twitter'/>
           </a>
-          <a href="mailto:sevket.yalcin@outlook.com">
+          <a href="mailto:sevket.yalcin@outlook.com" title="Send me an e-mail">
             <img src={mail}  alt='My E-Mail'/>
           </a>
         </div>

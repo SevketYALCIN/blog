@@ -17,6 +17,7 @@ class SEO extends React.Component<SeoProps> {
         <meta property="og:title" content={this.props.title} />
         <meta property="og:description" content={this.props.description} />
         <meta property="og:image" content={this.props.image} />
+        <meta property="og:site_name" content="Sevket Yalcin" />
   
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -24,6 +25,7 @@ class SEO extends React.Component<SeoProps> {
         <meta name="twitter:title" content={this.props.title} />
         <meta name="twitter:description" content={this.props.description} />
         <meta name="twitter:image" content={this.props.image} />
+        <meta name="twitter:site" content={this.props.twitter} />
       </Helmet>
     )
   }

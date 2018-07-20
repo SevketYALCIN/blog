@@ -10,7 +10,7 @@ export default class ArticleBlock extends React.Component<ArticleBlockProps> {
         <h3>{this.props.title}</h3>
         <small>{this.props.date}</small>
         <p dangerouslySetInnerHTML={{ __html: this.props.excerpt }} />
-        <Link to={this.props.slug} className="card-link" />
+        <Link to={this.props.slug} className="card-link" title="Go to the article page" />
         <TagsBlock tags={this.props.tags} />
       </div>
     )
