@@ -1,5 +1,5 @@
 ---
-title: "Create your blog using GatsbyJS (v2 beta)"
+title: "Create your blog using GatsbyJS v2 beta"
 date: "2018-07-21"
 tags: ["GatsbyJS", "React", "GraphQL", "Markdown"]
 ---
