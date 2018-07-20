@@ -29,21 +29,23 @@ class BlogPostTemplate extends React.Component {
     };
 
     return (
-      <Layout location={this.props.location} itemscope itemtype="http://schema.org/BlogPosting">
-        <SEO { ...indexSeo } />
-        <h1>{post.frontmatter.title}</h1>
-        <p>
-          <span itemprop="date">{post.frontmatter.date}</span>
-          <TagsBlock tags={post.frontmatter.tags} itemprop="keywords"/>
-        </p>
-        <div itemprop="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
-        <div className="article">
-          <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      <Layout location={this.props.location}>
+        <div itemscope itemtype="http://schema.org/BlogPosting">
+          <SEO { ...indexSeo } />
+          <h1>{post.frontmatter.title}</h1>
+          <p>
+            <span itemprop="date">{post.frontmatter.date}</span>
+            <span itemprop="keywords"><TagsBlock tags={post.frontmatter.tags}/></span>
+          </p>
+          <div itemprop="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr/>
+          <div className="article">
+            <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          </div>
+          <ArticleFooter 
+            next={next ? {slug: next.fields.slug, title: next.frontmatter.title} : null} 
+            previous={previous ? {slug: previous.fields.slug, title: previous.frontmatter.title}: null} />
         </div>
-        <ArticleFooter 
-          next={next ? {slug: next.fields.slug, title: next.frontmatter.title} : null} 
-          previous={previous ? {slug: previous.fields.slug, title: previous.frontmatter.title}: null} />
       </Layout>
     )
   }
