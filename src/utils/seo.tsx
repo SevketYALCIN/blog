@@ -9,6 +9,7 @@ class SEO extends React.Component<SeoProps> {
         <title>{this.props.title}</title>
         <meta name="description" content={this.props.description} />
         <meta name="image" content={this.props.image} />
+        <link rel="canonical" href={this.props.url}/>
   
         {/* OpenGraph tags */}
         <meta property="og:url" content={this.props.url} />
