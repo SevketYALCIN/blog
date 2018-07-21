@@ -12,14 +12,13 @@ import * as twitter from "./twitter.png"
 class Template extends React.Component<BaseTemplateProps> {
   render() {
     const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
     let goTo
     let title
     switch(location.pathname){
-      case rootPath:
+      case '/':
         goTo = '/'
         break
-      case rootPath + 'blog' || rootPath + 'blog/':
+      case '/blog/':
         goTo = '/'
         break
       default:
@@ -27,7 +26,7 @@ class Template extends React.Component<BaseTemplateProps> {
         break
     }
 
-    if(location.pathname === rootPath) {
+    if(location.pathname === '/' || location.pathname === '/blog/') {
       title = (
       <h1>
         <Link to={goTo} title="Go to Home">
