@@ -3,8 +3,9 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../utils/seo'
 import ArticleFooter from '../components/article-footer/article-footer'
-import TagsBlock from '../components/tags-block/tags-block'
 import * as Disqus from 'disqus-react';
+import BlogpostHeader from '../components/blogpost-header/blogpost-header'
+import TagsBlock from '../components/tags-block/tags-block'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -30,15 +31,17 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div itemscope itemtype="http://schema.org/BlogPosting">
+        <div itemScope itemType="http://schema.org/BlogPosting">
           <SEO { ...indexSeo } />
-          <h1 itemprop="headline">{post.frontmatter.title}</h1>
+          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <BlogpostHeader 
+            date={post.frontmatter.date} 
+            readTime={post.timeToRead} />
+          <div itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div itemProp="author">- Sevket Yalcin</div>
           <p>
-            <span itemprop="datePublished">{post.frontmatter.date}</span>
-            <span itemprop="keywords"><TagsBlock tags={post.frontmatter.tags}/></span>
+            <TagsBlock tags={post.frontmatter.tags}/>
           </p>
-          <div itemprop="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
-          <div itemprop="author">- Sevket Yalcin</div>
           <hr/>
           <div className="article">
             <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
@@ -71,6 +74,7 @@ export const pageQuery = graphql`
       id
       html
       excerpt
+      timeToRead
       fields {
         slug
       }

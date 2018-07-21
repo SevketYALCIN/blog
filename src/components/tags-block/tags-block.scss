@@ -1,9 +1,22 @@
 .tags{
     font-style: italic;
     font-size: 0.87rem;
+    display: flex;
+    flex-flow: wrap;    
+    margin-top: 10px;
     
-    a.tag {
-        z-index: 1;
-        position: relative;
+    div{
+        padding: 2px 5px;
+        background: #fb1d1d29;
+        border-radius: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        
+        a.tag {
+            z-index: 1;
+            position: relative;
+            color: black;
+            font-weight: 400;
+        }
     }
 }
