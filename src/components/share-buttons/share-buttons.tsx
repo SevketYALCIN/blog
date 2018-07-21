@@ -22,7 +22,7 @@ export default class ShareButtons extends React.Component<ShareButtonsProps> {
           scrolling="no"
           width="73"
           height="20"
-          src="http://platform.twitter.com/widgets/tweet_button.html?via=sev_yalcin"
+          src="https://platform.twitter.com/widgets/tweet_button.html?via=sev_yalcin"
           style={{border:"none",overflow:"hidden"}}/>
       </div>
     )
