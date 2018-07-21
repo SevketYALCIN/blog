@@ -1,10 +1,10 @@
 ---
-title: "Create your blog using GatsbyJS v2 beta"
+title: "Build your blog using GatsbyJS (v2 beta)"
 date: "2018-07-21"
 tags: ["GatsbyJS", "React", "GraphQL", "Markdown"]
 ---
 
-I recently found out about [GatsbyJS](https://www.gatsbyjs.org/ "GatsbyJS website") after they announced GatsbyJS V2 Beta. Having a blog and posting about stuff I work on has been on my to-do list for too long, so I decided to build a blog using GatsbyJS! This first post is a step-by-step guide on how I built this blog using the v2 beta.
+I recently found out about [GatsbyJS](https://www.gatsbyjs.org/ "GatsbyJS website") after they announced GatsbyJS V2 Beta. Having a blog and posting about stuff I work on has been on my to-do list for too long, so I decided to build my own blog using GatsbyJS! This first post is a step-by-step guide on how I built this blog using the v2 beta.
 	
 ## GatsbyJS
 
