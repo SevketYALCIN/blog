@@ -35,13 +35,14 @@ class BlogPostTemplate extends React.Component {
           <SEO { ...indexSeo } />
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <BlogpostHeader 
-            date={post.frontmatter.date} 
-            readTime={post.timeToRead} />
+            date={post.frontmatter.date}
+            readTime={post.timeToRead}
+            title={post.frontmatter.title}
+            url={indexSeo.url}
+            />
           <div itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
           <div itemProp="author">- Sevket Yalcin</div>
-          <p>
-            <TagsBlock tags={post.frontmatter.tags}/>
-          </p>
+          <TagsBlock tags={post.frontmatter.tags}/>
           <hr/>
           <div className="article">
             <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
