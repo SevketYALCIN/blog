@@ -20,18 +20,20 @@ class BlogIndex extends React.Component {
     }
     return (
       <Layout location={this.props.location}>
-        <SEO {...indexSeo} />
-        <Bio />
-        {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
-          const articleProps = {
-            title: node.frontmatter.title || node.fields.slug,
-            slug: node.fields.slug,
-            date: node.frontmatter.date,
-            excerpt: node.excerpt,
-            tags: node.frontmatter.tags
-          }
-          return <ArticleBlock {...articleProps} key={articleProps.slug}/>
-        })}
+        <div itemScope itemType="http://schema.org/Blog">
+          <SEO {...indexSeo} />
+          <Bio />
+          {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
+            const articleProps = {
+              title: node.frontmatter.title || node.fields.slug,
+              slug: node.fields.slug,
+              date: node.frontmatter.date,
+              excerpt: node.excerpt,
+              tags: node.frontmatter.tags
+            }
+            return <ArticleBlock {...articleProps} key={articleProps.slug}/>
+          })}
+        </div>
       </Layout>
     )
   }

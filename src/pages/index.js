@@ -18,7 +18,9 @@ export default class Index extends React.Component {
       <Layout location={this.props.location}>
         <SEO {...indexSeo} />
         <LinkMenu>
-          <Link to="/blog/" title="Go to the blog">Blog</Link>
+          <li>
+            <Link to="/blog/" title="Go to the blog">Blog</Link>
+          </li>
         </LinkMenu>
       </Layout>
     )

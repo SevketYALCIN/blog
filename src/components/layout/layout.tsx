@@ -60,7 +60,7 @@ class Template extends React.Component<BaseTemplateProps> {
       )
     
     return (
-      <div className="layout">
+      <div className="layout" itemScope={true} itemType="http://schema.org/WebPage">
         <Helmet>
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />

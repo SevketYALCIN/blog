@@ -6,13 +6,13 @@ import './article-block.scss'
 export default class ArticleBlock extends React.Component<ArticleBlockProps> {
   render() {
     return (
-      <div className="article">
+      <article itemProp="blogPosts" itemScope={true} itemType="http://schema.org/BlogPosting" className="article">
         <h2>{this.props.title}</h2>
         <small>{this.props.date}</small>
         <p dangerouslySetInnerHTML={{ __html: this.props.excerpt }} />
         <Link to={this.props.slug} className="card-link" title="Go to the article page" />
         <TagsBlock tags={this.props.tags} />
-      </div>
+      </article>
     )
   }
 }
