@@ -253,7 +253,7 @@ If it's your first time seeing GraphQL, [this tutorial](https://graphql.org/lear
 
 #### Page templates
 
-To create pages programmatically, the first thing we need is a page template. Since we used the blog starter, we already a basic page template in the `src/templates` folder named `blog-post.js`.
+To create pages programmatically, the first thing we need is a page template. Since we used the blog starter, we already have a basic page template in the `src/templates` folder named `blog-post.js`.
 
 ```jsx
 import React from 'react'
