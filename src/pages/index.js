@@ -19,7 +19,7 @@ export default class Index extends React.Component {
         <SEO {...indexSeo} />
         <LinkMenu>
           <li>
-            <Link to="/blog/" title="Go to the blog">Blog</Link>
+            <Link to="/blog/" title="Navigate to Blog">Blog</Link>
           </li>
         </LinkMenu>
       </Layout>
