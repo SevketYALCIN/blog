@@ -47,9 +47,6 @@ class BlogPostTemplate extends React.Component {
           <div className="article">
             <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           </div>
-          {/* <ArticleFooter 
-            next={next ? {slug: next.fields.slug, title: next.frontmatter.title} : null} 
-            previous={previous ? {slug: previous.fields.slug, title: previous.frontmatter.title}: null} />
         </div>
       </Layout>
     )
