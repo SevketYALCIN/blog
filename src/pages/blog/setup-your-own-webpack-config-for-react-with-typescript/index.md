@@ -4,7 +4,7 @@ date: "2018-07-31"
 tags: ["Webpack", "React", "Typescript"]
 ---
 
-Webpack has become one of the most important tools for modern web development and yet, it is a blackbox to many developers. In this tutorial, we are going to setup our own Webpack 4 configuration from scratch for React with Typescript.
+Webpack has become one of the most important tools for modern web development and yet, it is a blackbox to many developers. In this tutorial, we are going to setup our own basic Webpack 4 configuration from scratch for React with Typescript.
 
 If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript "create-react-app-typescript's Github"). There is no configuration needed, you can focus on coding!
 
@@ -336,8 +336,6 @@ For more options, check out the [DevServer section in the Webpack documentation]
 
 We can now run `npm start` to start a development server with hot reloading and `npm build` to have a minimized bundle for production.  
 
-This is only a basic configuration of Webpack for a React project in Typescript. This article is already long so I didn't add other features, but you should definitely push it further by: 
-- Adding **SASS** support using [`sass-loader`](https://github.com/webpack-contrib/sass-loader "Sass Loader's Github") 
-- Handling **images** using [`file-loader`](https://github.com/webpack-contrib/file-loader "File Loader's Github") 
+This is only a basic configuration of Webpack for a React project in Typescript. This article is already long so I didn't add other features, but you should definitely push it further by adding loaders, plugins and optimizing the configuration.
 
 _If you have any question or suggestion, please leave a comment below._
