@@ -8,7 +8,7 @@ Webpack has become one of the most important tools for modern web development an
 
 If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript). There is no configuration needed, you can focus on coding!
 
-# Webpack's core concepts 
+## Webpack's core concepts 
 
 > At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
 
@@ -30,7 +30,7 @@ The **loaders** allow Webpack to process different types of imported files other
 
 Now that you know the basics, let's install and configure Webpack. 
 
-# Installing Webpack 
+## Installing Webpack 
 
 First, let's create a new project folder and initialize it:
 ```bash 
@@ -70,7 +70,7 @@ npm start
 
 You can see that a new `dist` folder has been created with a Javascript bundle file named `main.js`.
 
-# Configuring Webpack 
+## Configuring Webpack 
 
 Let's configure Webpack to better fit our needs. 
 
@@ -91,7 +91,7 @@ module.exports = {
 
 Next, let's install Typescript.
 
-# Adding Typescript
+## Adding Typescript
 
 First, let's install the dependencies we need:
 
@@ -106,7 +106,7 @@ npm i --save-dev typescript awesome-typescript-loader source-map-loader
 - `awesome-typescript-loader` will help Webpack compile our Typescript code using Typescript's configuration file named `tsconfig.json`
 - `source-map-loader` will help Webpack generating sourcemaps for our Typescript code.
 
-## Adding a Typescript configuration file
+### Adding a Typescript configuration file
 
 Now we need to create a `tsconfig.json` file at the root of our project, which contains all the compilation settings:
 
@@ -128,7 +128,7 @@ Now we need to create a `tsconfig.json` file at the root of our project, which c
 
 You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 
-## Configuring Webpack for Typescript
+### Configuring Webpack for Typescript
 
 We need to tell Webpack to use our `awesome-typescript-loader` for Typescript files and reprocess sourcemaps using `source-map-loader`, look at the comments:
 
@@ -166,7 +166,7 @@ module.exports = {
 }
 ```
 
-## Testing the configuration
+### Testing the configuration
 
 To test our configuration, we first need to change the extension of our `index.js` file to `index.tsx` and then add simple Typescript code inside it:
 
@@ -185,7 +185,7 @@ console.log(`New message from ${message.from}: ${message.body}`)
 
 If you run `npm start`, you will see in the `dist` folder that Webpack transformed our Typescript code and also generated a sourcemap file.
 
-# Adding React
+## Adding React
 
 Let’s now add React and ReactDOM, along with their declaration files, as dependencies:
 
@@ -235,7 +235,7 @@ ReactDOM.render(
 ```
 Now if we run `npm start`, Webpack should be able to tranform and bundle our React code!
 
-# Adding HTML 
+## Adding HTML 
 
 I voluntarily didn't make you create an HTML file yet, because we are going to use a Webpack plugin called `html-webpack-plugin` for that! This plugin will generate an HTML file using a template that we are going to give him, and automatically include our Webpack bundles in the body:
 
@@ -305,7 +305,7 @@ Now let's create our `index.html` template in the `src` folder:
 
 Running `npm start` will now generate our Javascript bundle and an HTML file with our bundle already included with a script tag in the body. 
 
-# Setting up a development server 
+## Setting up a development server 
 
 Finally, we are going to setup a development server that will provide us **live reloading** using the `webpack-dev-server` module. 
 
@@ -332,7 +332,7 @@ We are telling Webpack to run on development mode while watching for changes.
 
 For more options, check out the [DevServer section in the Webpack documentation](https://webpack.js.org/configuration/dev-server/) 
 
-# Conclusion
+## Conclusion
 
 We can now run `npm start` to start a development server with hot reloading and `npm build` to have a minimized bundle for production.  
 
