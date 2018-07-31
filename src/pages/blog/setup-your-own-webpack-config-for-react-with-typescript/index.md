@@ -6,13 +6,13 @@ tags: ["Webpack", "React", "Typescript"]
 
 Webpack has become one of the most important tools for modern web development and yet, it is a blackbox to many developers. In this tutorial, we are going to setup our own Webpack 4 configuration from scratch for React with Typescript.
 
-If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript). There is no configuration needed, you can focus on coding!
+If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript "create-react-app-typescript's Github"). There is no configuration needed, you can focus on coding!
 
 ## Webpack's core concepts 
 
 > At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
 
--- _[Webpack's documentation](https://webpack.js.org/concepts/)_
+-- _[Webpack's documentation](https://webpack.js.org/concepts/ "Webpack's documentation")_
 
 To get started with Webpack, we only need to understand the following core concepts: 
 - Entry 
@@ -26,7 +26,7 @@ The **output** property tells Webpack how to name the bundle files and where it 
 
 The **loaders** allow Webpack to process different types of imported files other than Javascript. Without loaders, Webpack only knows how to process Javascript files. Loaders allow you to create rules in your configuration file telling webpack to use a specific loader when it encounters a specific type of file. 
 
-**Plugins** allow you to extend Webpack's capabilities like: bundle optimization, assets management, etc. There are many [plugins that Webpack provides out-of-box.](https://webpack.js.org/plugins/) 
+**Plugins** allow you to extend Webpack's capabilities like: bundle optimization, assets management, etc. There are many [plugins that Webpack provides out-of-box.](https://webpack.js.org/plugins/ "Webpack's plugins list") 
 
 Now that you know the basics, let's install and configure Webpack. 
 
@@ -126,7 +126,7 @@ Now we need to create a `tsconfig.json` file at the root of our project, which c
 }
 ```
 
-You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html "Typescript's tsconfig.json documentation")
 
 ### Configuring Webpack for Typescript
 
@@ -330,14 +330,14 @@ We are telling Webpack to run on development mode while watching for changes.
 - The `--hot` option enables Webpack's **Hot Module Replacement**  
 - The `--open` option will open your default browser when you run `npm start`. 
 
-For more options, check out the [DevServer section in the Webpack documentation](https://webpack.js.org/configuration/dev-server/) 
+For more options, check out the [DevServer section in the Webpack documentation](https://webpack.js.org/configuration/dev-server/ "Webpack documentation's DevServer section") 
 
 ## Conclusion
 
 We can now run `npm start` to start a development server with hot reloading and `npm build` to have a minimized bundle for production.  
 
 This is only a basic configuration of Webpack for a React project in Typescript. This article is already long so I didn't add other features, but you should definitely push it further by: 
-- Adding **SASS** support using [`sass-loader`](https://github.com/webpack-contrib/sass-loader) 
-- Handling **images** using [`file-loader`](https://github.com/webpack-contrib/file-loader) 
+- Adding **SASS** support using [`sass-loader`](https://github.com/webpack-contrib/sass-loader "Sass Loader's Github") 
+- Handling **images** using [`file-loader`](https://github.com/webpack-contrib/file-loader "File Loader's Github") 
 
 _If you have any question or suggestion, please leave a comment below._
