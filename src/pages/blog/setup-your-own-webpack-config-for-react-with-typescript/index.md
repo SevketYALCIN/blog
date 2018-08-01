@@ -6,7 +6,7 @@ tags: ["Webpack", "React", "Typescript"]
 
 Webpack has become one of the most important tools for modern web development and yet, it is a blackbox to many developers. In this tutorial, we are going to setup our own basic Webpack 4 configuration from scratch for React with Typescript.
 
-If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript "create-react-app-typescript's Github"). There is no configuration needed, you can focus on coding!
+If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript "create-react-app-typescript's Github"). There is no configuration needed, you can focus on coding.
 
 ## Webpack's core concepts 
 
