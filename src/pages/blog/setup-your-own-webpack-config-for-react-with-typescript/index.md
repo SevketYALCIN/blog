@@ -94,14 +94,13 @@ First, we need to install the dependencies:
 
 ```bash
 #yarn
-yarn add typescript awesome-typescript-loader source-map-loader --dev
+yarn add typescript awesome-typescript-loader --dev
 
 #npm
-npm i --save-dev typescript awesome-typescript-loader source-map-loader
+npm i --save-dev typescript awesome-typescript-loader
 ```
 
-- `awesome-typescript-loader` will help Webpack compile our Typescript code.
-- `source-map-loader` will help Webpack generating sourcemaps for our Typescript code.
+`awesome-typescript-loader` will help Webpack compile our Typescript codeand generate sourcemaps.
 
 ### Adding a Typescript configuration file
 
@@ -127,7 +126,7 @@ You can learn more about the `tsconfig.json` file [here](https://www.typescriptl
 
 ### Configuring Webpack for Typescript
 
-We need to tell Webpack to use our `awesome-typescript-loader` for Typescript files and reprocess sourcemaps using `source-map-loader`.
+We need to tell Webpack to use our `awesome-typescript-loader` for Typescript files.
 Let's update our `webpack.config.js` file, explanations are in comments:
 
 ```js
@@ -152,12 +151,6 @@ module.exports = {
       { 
         test: /\.tsx?$/, 
         loader: "awesome-typescript-loader" 
-      },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { 
-        enforce: "pre", 
-        test: /\.js$/, 
-        loader: "source-map-loader"
       }
     ]
   }
