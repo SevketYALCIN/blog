@@ -100,7 +100,7 @@ yarn add typescript awesome-typescript-loader --dev
 npm i --save-dev typescript awesome-typescript-loader
 ```
 
-`awesome-typescript-loader` will help Webpack compile our Typescript codeand generate sourcemaps.
+`awesome-typescript-loader` will help Webpack compile our Typescript code and generate sourcemaps.
 
 ### Adding a Typescript configuration file
 
@@ -122,7 +122,7 @@ Now we need to create a `tsconfig.json` file at the root of our project, which w
 }
 ```
 
-You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html "Typescript's tsconfig.json documentation")
+You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html "Typescript's tsconfig.json documentation").
 
 ### Configuring Webpack for Typescript
 
@@ -261,11 +261,6 @@ module.exports = {
       {  
         test: /\.tsx?$/,  
         loader: "awesome-typescript-loader"  
-      }, 
-      {  
-        enforce: "pre",  
-        test: /\.js$/,  
-        loader: "source-map-loader"
       }
     ]
   },
