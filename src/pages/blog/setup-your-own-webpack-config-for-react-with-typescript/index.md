@@ -4,15 +4,15 @@ date: "2018-07-31"
 tags: ["Webpack", "React", "Typescript"]
 ---
 
-Webpack has become one of the most important tools for modern web development and yet, it is a blackbox to many developers. In this tutorial, we are going to setup our own Webpack 4 configuration from scratch for React with Typescript.
+Webpack has become one of the most important tools for modern web development and yet, it is a blackbox to many developers. In this tutorial, we are going to setup our own basic Webpack 4 configuration from scratch for React with Typescript.
 
-If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript). There is no configuration needed, you can focus on coding!
+If you just want to try something or build a simple side project, you should use the `create-react-app` with [Typescript](https://github.com/wmonk/create-react-app-typescript "create-react-app-typescript's Github"). There is no configuration needed, you can focus on coding.
 
-# Webpack's core concepts 
+## Webpack's core concepts 
 
 > At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
 
--- _[Webpack's documentation](https://webpack.js.org/concepts/)_
+-- _[Webpack's documentation](https://webpack.js.org/concepts/ "Webpack's documentation")_
 
 To get started with Webpack, we only need to understand the following core concepts: 
 - Entry 
@@ -20,17 +20,17 @@ To get started with Webpack, we only need to understand the following core conce
 - Loaders 
 - Plugins 
 
-The **entry** in Webpack is which file, or module, should Webpack use to start resolving the dependencies. The default value in Webpack 4 is `./src/index.js` .
+The **entry** is which file, or module, should Webpack use to start resolving the dependencies. The default value in Webpack 4 is `./src/index.js` .
 
 The **output** property tells Webpack how to name the bundle files and where it should output them. The default value in Webpack 4 is the `./dist` folder.  
 
 The **loaders** allow Webpack to process different types of imported files other than Javascript. Without loaders, Webpack only knows how to process Javascript files. Loaders allow you to create rules in your configuration file telling webpack to use a specific loader when it encounters a specific type of file. 
 
-**Plugins** allow you to extend Webpack's capabilities like: bundle optimization, assets management, etc. There are many [plugins that Webpack provides out-of-box.](https://webpack.js.org/plugins/) 
+**Plugins** allow you to extend Webpack's capabilities like: bundle optimization, assets management, etc. There are many [plugins that Webpack provides out-of-box.](https://webpack.js.org/plugins/ "Webpack's plugins list") 
 
 Now that you know the basics, let's install and configure Webpack. 
 
-# Installing Webpack 
+## Installing Webpack 
 
 First, let's create a new project folder and initialize it:
 ```bash 
@@ -39,7 +39,7 @@ cd react-typescript-webpack-tutorial
 npm init –y   #-y skips all the questions 
 ``` 
 
-We can now install Webpack and the Webpack CLI as dev-dependencies:
+Let's now install Webpack and the Webpack CLI as dev-dependencies:
 ```bash 
 #yarn 
 yarn add webpack webpack-cli --dev 
@@ -59,22 +59,19 @@ Let's add two npm scripts to our `package.json` to run Webpack:
 }
 ``` 
 
-If you create an `index.js` file inside an `src` folder, you can run Webpack **without any configuration**:
+If we create an `index.js` file inside an `src` folder (default entry point in Webpack 4), we can run Webpack **without any configuration**.
 
-```bash
-mkdir src 
-touch src/index.js 
+Let's create the `src/index.js` file with dummy code:
+```js
+console.log('hello')
+```
+And then run `npm start` to generate our Javascript bundle file named `main.js` inside the `dist` folder.
 
-npm start
-``` 
-
-You can see that a new `dist` folder has been created with a Javascript bundle file named `main.js`.
-
-# Configuring Webpack 
+## Configuring Webpack 
 
 Let's configure Webpack to better fit our needs. 
 
-First, create Webpack's configuration file named `webpack.config.js` in the root of your project. The basic configuration looks like this: 
+First, we need to create Webpack's configuration file named `webpack.config.js` in the root of our project. The basic configuration looks like this: 
 ```js 
 const path = require("path")
 
@@ -89,26 +86,25 @@ module.exports = {
 - We specified `src/index.js` as the entry point
 - We told Webpack to output the bundle into the `dist` folder with the name `index_bundle.js`
 
-Next, let's install Typescript.
+Next, let's add Typescript.
 
-# Adding Typescript
+## Adding Typescript
 
-First, let's install the dependencies we need:
+First, we need to install the dependencies:
 
 ```bash
 #yarn
-yarn add typescript awesome-typescript-loader source-map-loader --dev
+yarn add typescript awesome-typescript-loader --dev
 
 #npm
-npm i --save-dev typescript awesome-typescript-loader source-map-loader
+npm i --save-dev typescript awesome-typescript-loader
 ```
 
-- `awesome-typescript-loader` will help Webpack compile our Typescript code using Typescript's configuration file named `tsconfig.json`
-- `source-map-loader` will help Webpack generating sourcemaps for our Typescript code.
+`awesome-typescript-loader` will help Webpack compile our Typescript code and generate sourcemaps.
 
-## Adding a Typescript configuration file
+### Adding a Typescript configuration file
 
-Now we need to create a `tsconfig.json` file at the root of our project, which contains all the compilation settings:
+Now we need to create a `tsconfig.json` file at the root of our project, which will contain all the compilation settings:
 
 ```json
 {
@@ -126,11 +122,12 @@ Now we need to create a `tsconfig.json` file at the root of our project, which c
 }
 ```
 
-You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+You can learn more about the `tsconfig.json` file [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html "Typescript's tsconfig.json documentation").
 
-## Configuring Webpack for Typescript
+### Configuring Webpack for Typescript
 
-We need to tell Webpack to use our `awesome-typescript-loader` for Typescript files and reprocess sourcemaps using `source-map-loader`, look at the comments:
+We need to tell Webpack to use our `awesome-typescript-loader` for Typescript files.
+Let's update our `webpack.config.js` file, explanations are in comments:
 
 ```js
 const path = require("path")
@@ -154,19 +151,13 @@ module.exports = {
       { 
         test: /\.tsx?$/, 
         loader: "awesome-typescript-loader" 
-      },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { 
-        enforce: "pre", 
-        test: /\.js$/, 
-        loader: "source-map-loader"
       }
     ]
   }
 }
 ```
 
-## Testing the configuration
+### Testing the configuration
 
 To test our configuration, we first need to change the extension of our `index.js` file to `index.tsx` and then add simple Typescript code inside it:
 
@@ -184,9 +175,9 @@ let message: Message = {
 console.log(`New message from ${message.from}: ${message.body}`)
 ```
 
-If you run `npm start`, you will see in the `dist` folder that Webpack transformed our Typescript code and also generated a sourcemap file.
+If we run `npm start`, you will see in the `dist` folder that Webpack transformed our Typescript code and also generated a sourcemap file. 
 
-# Adding React
+## Adding React
 
 Let’s now add React and ReactDOM, along with their declaration files, as dependencies:
 
@@ -236,9 +227,9 @@ ReactDOM.render(
 ```
 Now if we run `npm start`, Webpack should be able to tranform and bundle our React code!
 
-# Adding HTML 
+## Adding HTML 
 
-I voluntarily didn't make you create an HTML file yet, because we are going to use a Webpack plugin called `html-webpack-plugin` for that! This plugin will generate an HTML file using a template that we are going to give him, and automatically include our Webpack bundles in the body:
+I voluntarily didn't create an HTML file yet, because we are going to use a Webpack plugin called `html-webpack-plugin` for that. This plugin will generate an HTML file using a template that we are going to give him, and automatically include our Webpack bundles inside the body:
 
 ```bash 
 # yarn 
@@ -253,10 +244,12 @@ After having installed the plugin, we need to add it to our Webpack config's plu
 ```js
 const path = require("path") 
 
+// Require the new plugin
 const HtmlWebpackPlugin = require("html-webpack-plugin") 
 
 module.exports = { 
-  entry: "./src/index.tsx", 
+  entry: "./src/index.tsx",
+  devtool: "source-map",
   resolve: { 
     extensions: [".ts", ".tsx", ".js", ".json"] 
   }, 
@@ -269,23 +262,18 @@ module.exports = {
       {  
         test: /\.tsx?$/,  
         loader: "awesome-typescript-loader"  
-      }, 
-      {  
-        enforce: "pre",  
-        test: /\.js$/,  
-        loader: "source-map-loader"
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"  // Specifying the HTML template to use
+      template: "./src/index.html"  // Specify the HTML template to use
     })
   ]
 }
 ```
 
-Now let's create our `index.html` template in the `src` folder: 
+Now let's create a simple `index.html` template in the `src` folder: 
 
 ```html 
 <!DOCTYPE html> 
@@ -304,9 +292,9 @@ Now let's create our `index.html` template in the `src` folder:
 </html>
 ``` 
 
-Running `npm start` will now generate our Javascript bundle and an HTML file with our bundle already included with a script tag in the body. 
+Running `npm start` will now generate our Javascript bundle and an HTML file with our bundle already included with a script tag inside the body.
 
-# Setting up a development server 
+## Setting up a development server 
 
 Finally, we are going to setup a development server that will provide us **live reloading** using the `webpack-dev-server` module. 
 
@@ -327,18 +315,16 @@ And then change the `start` script in our `package.json` file to:
 }
 ``` 
 
-We are telling Webpack to run on development mode while watching for changes.  
-- The `--hot` option enables Webpack's **Hot Module Replacement**  
-- The `--open` option will open your default browser when you run `npm start`. 
+We are telling Webpack DevServer to run on development mode while watching for changes.
+- The `--hot` option enables Webpack's **Hot Module Replacement**. 
+- The `--open` option will open our default browser when we run `npm start`. 
 
-For more options, check out the [DevServer section in the Webpack documentation](https://webpack.js.org/configuration/dev-server/) 
+For more options, check out the [DevServer section in the Webpack documentation](https://webpack.js.org/configuration/dev-server/ "Webpack documentation's DevServer section") 
 
-# Conclusion
+## Conclusion
 
 We can now run `npm start` to start a development server with hot reloading and `npm build` to have a minimized bundle for production.  
 
-This is only a basic configuration of Webpack for a React project in Typescript. This article is already long so I didn't add other features, but you should definitely push it further by: 
-- Adding **SASS** support using [`sass-loader`](https://github.com/webpack-contrib/sass-loader) 
-- Handling **images** using [`file-loader`](https://github.com/webpack-contrib/file-loader) 
+This is only a basic configuration of Webpack for a React project in Typescript. This article is already long so I didn't add other features, but you should definitely push it further by adding other loaders, plugins and optimizing the configuration.
 
 _If you have any question or suggestion, please leave a comment below._
