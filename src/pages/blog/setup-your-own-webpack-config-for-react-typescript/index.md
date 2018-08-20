@@ -176,9 +176,10 @@ type Message = {
   from: string
 }
 
-let message: Message;
-message.from = 'Max';
-message.body = 'Hi!'
+let message: Message = {
+  from: 'Max',
+  body: 'Hi!'
+}
 
 console.log(`New message from ${message.from}: ${message.body}`)
 ```
