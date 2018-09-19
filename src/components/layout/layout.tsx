@@ -12,36 +12,34 @@ import * as twitter from "./twitter.png"
 class Template extends React.Component<BaseTemplateProps> {
   render() {
     const { location, children } = this.props
-    let goTo
     let title
     switch(location.pathname){
       case '/':
-        goTo = '/'
+        title = (
+          <h1>
+            <span>
+            I'm <span className="name">Sevket Yalcin</span>, a web developer currently living and working in Tokyo.
+            </span>
+          </h1>)
         break
       case '/blog/':
-        goTo = '/'
+        title = (
+          <h1>
+            <Link to='/' title="Go to Home">
+              SEVKET YALCIN
+            </Link>
+          </h1>)
         break
       default:
-        goTo = '/blog/'
+        title = (
+          <h3>
+            <Link to='/blog/' title="Go to Home">
+              SEVKET YALCIN
+            </Link>
+          </h3>)
         break
     }
 
-    if(location.pathname === '/' || location.pathname === '/blog/') {
-      title = (
-      <h1>
-        <Link to={goTo} title="Go to Home">
-          SEVKET YALCIN
-        </Link>
-      </h1>)
-    }
-    else {
-      title = (
-        <h3>
-          <Link to={goTo} title="Go to Home">
-            SEVKET YALCIN
-          </Link>
-        </h3>)
-    }
     const header = (
       <div className="header">
         {title}
@@ -60,7 +58,7 @@ class Template extends React.Component<BaseTemplateProps> {
       )
     
     return (
-      <div className="layout" itemScope={true} itemType="http://schema.org/WebPage">
+      <div className={ location.pathname === '/' ? `layout main` : `layout`} itemScope={true} itemType="http://schema.org/WebPage">
         <Helmet>
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />

@@ -1,34 +1,61 @@
-.layout{
-    max-width: 42rem;
-    margin: 0 auto;
-    padding: 3rem 1.05rem;
+.layout {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 1.05rem;
 
-    .header{
-        margin-bottom: 2rem;
-        h1, h3 {
-            margin-top: 0;
-            border:none;
-            text-align: center;
-            margin-bottom: 1rem;
-            padding-bottom: 0;
-            height: 3rem;
-            a {
-                font-weight: 300;
-                font-size: 2.3rem;
-                text-decoration: none;
-                color: hsla(0, 0%, 0%, 0.75);
-            }
-        }
-
-        div{
-            display: flex;
-            justify-content: space-between;
-            width: 125px;
-            margin: auto;
-            height: 25px;
-            img {
-                width: 25px;
-            }
-        }
+  .header {
+    margin-bottom: 2rem;
+    h1,
+    h3 {
+      margin-top: 0;
+      border: none;
+      text-align: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0;
+      min-height: 3rem;
+      a,
+      span {
+        font-weight: 300;
+        font-size: 2.3rem;
+        text-decoration: none;
+        color: hsla(0, 0%, 0%, 0.75);
+      }
     }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 125px;
+      margin: auto;
+      height: 25px;
+      img {
+        width: 25px;
+      }
+    }
+
+    .name {
+      font-weight: 600;
+    }
+  }
+
+  &.main {
+    .header {
+      margin: 3rem;
+
+      h1 {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
+a {
+  text-decoration: underline;
 }
