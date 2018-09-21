@@ -5,13 +5,28 @@ githubTheme.overrideThemeStyles = () => ({
   'body': {
     background: "#fbfafc"
   },
-  'a, strong': {
-    color: "#fb1d1d"
-  },
   '.layout :not(pre) > code[class*="language-"]': {
     padding: "3px .1em",
     borderRadius: "0"
-  }
+  },
+  
+'::selection': {
+  background: '#ffb7b7' /* WebKit/Blink Browsers */
+},
+'::-moz-selection': {
+  background: '#ffb7b7' /* Gecko Browsers */
+},
+'a:not(.special-link)': {
+  borderBottom: '1px dotted black',
+  textDecoration: 'none',
+  color: 'black'
+},
+'a:not(.special-link):hover': {
+  textDecoration: 'none',
+  borderBottom: '1px dotted #e6c2c2',
+  color: '#fb1d1d'
+}
+
 })
 
 const typography = new Typography(githubTheme)

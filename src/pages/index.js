@@ -18,9 +18,27 @@ export default class Index extends React.Component {
       <Layout location={this.props.location}>
         <SEO {...indexSeo} />
         <LinkMenu>
-          <li>
-            <Link to="/blog/" title="Navigate to Blog">Blog</Link>
-          </li>
+          <div className="link-block">
+            <div className="link-block-title">
+              WORK
+            </div>
+            <div className="link-block-content">
+              <a href="https://www.forcia.com/" title="Navigate to Blog" target="blank">Forcia</a>
+              <div>
+                Developer
+              </div>
+            </div>
+          </div>
+          <div className="link-block">
+            <div className="link-block-title">
+              BLOG
+            </div>
+            <div className="link-block-content">
+              {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
+                return <div><Link to={node.fields.slug} title={node.frontmatter.title}>{node.frontmatter.title}</Link></div>
+              })}
+            </div>
+          </div>
         </LinkMenu>
       </Layout>
     )
@@ -36,6 +54,21 @@ export const pageQuery = graphql`
         image
         siteUrl
         twitter
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            title
+            tags
+          }
+        }
       }
     }
   }

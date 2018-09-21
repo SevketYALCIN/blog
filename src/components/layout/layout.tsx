@@ -25,7 +25,7 @@ class Template extends React.Component<BaseTemplateProps> {
       case '/blog/':
         title = (
           <h1>
-            <Link to='/' title="Go to Home">
+            <Link to='/' title="Go to Home" className="special-link">
               SEVKET YALCIN
             </Link>
           </h1>)
@@ -33,7 +33,7 @@ class Template extends React.Component<BaseTemplateProps> {
       default:
         title = (
           <h3>
-            <Link to='/blog/' title="Go to Home">
+            <Link to='/blog/' title="Go to Home" className="special-link">
               SEVKET YALCIN
             </Link>
           </h3>)
@@ -44,13 +44,13 @@ class Template extends React.Component<BaseTemplateProps> {
       <div className="header">
         {title}
         <div>
-          <a target="blank" href="https://github.com/SevketYALCIN" title="Go to my Github">
+          <a target="blank" href="https://github.com/SevketYALCIN" title="Go to my Github" className="special-link">
             <img src={github} alt='My Github' />
           </a>
-          <a target="blank" href="https://twitter.com/sev_yalcin" title="Go to my Twitter">
+          <a target="blank" href="https://twitter.com/sev_yalcin" title="Go to my Twitter" className="special-link">
             <img src={twitter} alt='My Twitter'/>
           </a>
-          <a href="mailto:sevket.yalcin@outlook.com" title="Send me an e-mail">
+          <a href="mailto:sevket.yalcin@outlook.com" title="Send me an e-mail" className="special-link">
             <img src={mail}  alt='My E-Mail'/>
           </a>
         </div>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../utils/seo'
-import ArticleFooter from '../components/article-footer/article-footer'
+// import ArticleFooter from '../components/article-footer/article-footer'
 import * as Disqus from 'disqus-react';
 import BlogpostHeader from '../components/blogpost-header/blogpost-header'
 import TagsBlock from '../components/tags-block/tags-block'
@@ -11,7 +11,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteMeta = this.props.data.site.siteMetadata
-    const { previous, next } = this.props.pageContext
+    // const { previous, next } = this.props.pageContext
 
     const indexSeo = {
       title: `${post.frontmatter.title}`,
