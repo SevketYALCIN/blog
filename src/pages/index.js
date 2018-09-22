@@ -35,7 +35,7 @@ export default class Index extends React.Component {
             </div>
             <div className="link-block-content">
               {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
-                return <div><Link to={node.fields.slug} title={node.frontmatter.title}>{node.frontmatter.title}</Link></div>
+                return <div className="blog-links"><Link to={node.fields.slug} title={node.frontmatter.title}>{node.frontmatter.title}</Link></div>
               })}
             </div>
           </div>

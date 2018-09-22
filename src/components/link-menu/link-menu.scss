@@ -5,16 +5,31 @@
   justify-content: space-evenly;
   margin-left: 0;
 
-  .link-block-title {
-    color: #666;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+  @media screen and (max-width: 750px) {
+    flex-direction: column
   }
 
-  .link-block-content {
+  .link-block {
+    width: 50%;
 
+    @media screen and (max-width: 750px) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .link-block-title {
+      color: #666;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .link-block-content {
+      .blog-links {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 }
