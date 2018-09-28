@@ -1,7 +1,7 @@
-# Blog
-- React, Typescript, Sass
-- Gatsby v2 + gatsby-starter-blog (React, graphql)
-- Typography.js
+# blog
+
+Personal website and blog built using Gatsby v2 and Typescript
 
 ## Running in development
+
 `gatsby develop`
