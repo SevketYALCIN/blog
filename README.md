@@ -1,7 +1,4 @@
 # blog
 
-Personal website and blog built using Gatsby v2 and Typescript
+Personal website and blog built using Gatsby v2
 
-## Running in development
-
-`gatsby develop`
