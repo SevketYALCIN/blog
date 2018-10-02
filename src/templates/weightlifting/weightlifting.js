@@ -105,6 +105,7 @@ class Lifting extends React.Component {
       title: {
         display: true,
         text: 'Stronglifts 5x5',
+        fontSize: 18
       },
       tooltips: {
         mode: 'nearest',
