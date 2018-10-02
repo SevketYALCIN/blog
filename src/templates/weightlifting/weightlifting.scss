@@ -1,0 +1,26 @@
+.canvas-container {
+  position: relative;
+  height: 60vh;
+}
+
+.button-group {
+	margin: auto;
+  button.ui.button.toggle {
+    width: calc((100% - 30px) / 3);
+		margin-top: 10px;
+		margin-right: 5px;
+		margin-left: 5px;
+		font-size: 0.9rem;
+
+		@media screen and (max-width: 750px) {
+			width: calc((100% - 10px) / 2);
+			margin-top: 5px;
+			margin-right: 2.5px;
+			margin-left: 2.5px;
+		}
+
+		&.active {
+			background-color: #d04444 !important;
+		}
+  }
+}

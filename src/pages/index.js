@@ -23,9 +23,18 @@ export default class Index extends React.Component {
               WORK
             </div>
             <div className="link-block-content">
-              <a href="https://www.forcia.com/" title="Navigate to Blog" target="blank">Forcia</a>
+              <a href="https://www.forcia.com/" title="Forcia's website" target="blank">Forcia, Tokyo</a>
               <div>
-                Developer
+                Software engineer
+              </div>
+            </div>
+            <div className="link-block-title">
+              Previously
+            </div>
+            <div className="link-block-content">
+              <a href="https://www.infinitesquare.com/" title="Infinite Square's website" target="blank">Infinite Square, Paris</a>
+              <div>
+                Software engineer
               </div>
             </div>
           </div>
@@ -34,9 +43,18 @@ export default class Index extends React.Component {
               BLOG
             </div>
             <div className="link-block-content">
-              {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
-                return <div className="blog-links"><Link to={node.fields.slug} title={node.frontmatter.title}>{node.frontmatter.title}</Link></div>
+              {this.props.data.allMarkdownRemark.edges.map(({ node }, index) => {
+                return <div key={`link-${index}`} className="blog-links"><Link to={node.fields.slug} title={node.frontmatter.title}>{node.frontmatter.title}</Link></div>
               })}
+              <div className="go-to-list"><Link className="see-more" to={'/blog/'} title={'See more'}>See more</Link></div>
+            </div>
+          </div>
+          <div className="link-block">
+            <div className="link-block-title">
+              About me
+            </div>
+            <div className="link-block-content">
+              <Link to={'/weightlifting/'} title={'Go to Weight Lifting page'}>Weight Lifting</Link>
             </div>
           </div>
         </LinkMenu>

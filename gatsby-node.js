@@ -3,18 +3,28 @@ const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+const squat = require('./data/squat.json')
+const deadlift = require('./data/deadlift.json')
+const overhead = require('./data/overhead.json')
+const row = require('./data/row.json')
+const bench = require('./data/bench.json')
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
-    const tagTemplate = path.resolve("src/templates/tags.js")
+    const tagTemplate = path.resolve('src/templates/tags.js')
+    const weightliftingTemplate = path.resolve('src/templates/weightlifting/weightlifting.js')
 
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              limit: 1000
+            ) {
               edges {
                 node {
                   fields {
@@ -36,11 +46,12 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMarkdownRemark.edges
 
         _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+          const previous =
+            index === posts.length - 1 ? null : posts[index + 1].node
+          const next = index === 0 ? null : posts[index - 1].node
 
           createPage({
             path: post.node.fields.slug,
@@ -54,15 +65,15 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         // Create tags pages.
-        let tags = [];
+        let tags = []
         // Iterate through each post, putting all found tags into `tags`
         _.each(posts, edge => {
-          if (_.get(edge, "node.frontmatter.tags")) {
-            tags = tags.concat(edge.node.frontmatter.tags);
+          if (_.get(edge, 'node.frontmatter.tags')) {
+            tags = tags.concat(edge.node.frontmatter.tags)
           }
-        });
+        })
         // Eliminate duplicate tags
-        tags = _.uniq(tags);
+        tags = _.uniq(tags)
 
         // Make tag pages
         tags.forEach(tag => {
@@ -72,8 +83,17 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               tag,
             },
-          });
-        });
+          })
+        })
+
+        // Create Weightlifting page
+        createPage({
+          path: `/weightlifting/`,
+          component: weightliftingTemplate,
+          context: {
+            squat, deadlift, overhead, row, bench
+          },
+        })
       })
     )
   })

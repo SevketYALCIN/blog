@@ -2,13 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Bio from '../components/bio/bio'
 import Layout from '../components/layout/layout'
-// import { TemplateProps } from '../models/template';
 import SEO from '../utils/seo'
 import ArticleBlock from '../components/article-block/article-block'
 
 class BlogIndex extends React.Component {
-  // class BlogIndex extends React.Component<TemplateProps<Index>> {
-
   render() {
     const indexSeo = {
       title: `Blog | ${this.props.data.site.siteMetadata.title}`,
@@ -69,26 +66,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// GraphQL node type
-// type Index = {
-//   site:{
-//     siteMetadata:{
-//       title: string
-//     }
-//   }
-//   allMarkdownRemark:{
-//     edges:{
-//       node:{
-//         excerpt: string,
-//         fields:{
-//           slug: string
-//         }
-//         frontmatter: {
-//           date: string,
-//           title: string
-//         }
-//       }
-//     }[]
-//   }
-// }

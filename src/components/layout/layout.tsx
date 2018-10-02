@@ -22,18 +22,10 @@ class Template extends React.Component<BaseTemplateProps> {
             </span>
           </h1>)
         break
-      case '/blog/':
-        title = (
-          <h1>
-            <Link to='/' title="Go to Home" className="special-link">
-              SEVKET YALCIN
-            </Link>
-          </h1>)
-        break
       default:
         title = (
           <h3>
-            <Link to='/blog/' title="Go to Home" className="special-link">
+            <Link to='/' title="Go to Home" className="special-link">
               SEVKET YALCIN
             </Link>
           </h3>)

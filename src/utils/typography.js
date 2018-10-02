@@ -17,14 +17,13 @@ githubTheme.overrideThemeStyles = () => ({
   background: '#ffb7b7' /* Gecko Browsers */
 },
 'a:not(.special-link)': {
-  borderBottom: '1px dotted black',
+  borderBottom: '1px dotted #98333359',
   textDecoration: 'none',
-  color: 'black'
+  color: 'black',
+  transition: 'color 0.5s ease'
 },
 'a:not(.special-link):hover': {
-  textDecoration: 'none',
-  borderBottom: '1px dotted #e6c2c2',
-  color: '#fb1d1d'
+  color: '#d04444'
 }
 
 })
