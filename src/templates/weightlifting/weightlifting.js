@@ -157,6 +157,11 @@ class Lifting extends React.Component {
     return (
       <Layout location={this.props.location}>
         <SEO {...indexSeo} />
+        <h1>Weight Lifting</h1>
+        <p>
+          I have started weight lifting in May 2018, following the <a href="https://stronglifts.com/5x5/" target="blank" title="Stronglifts 5x5">Stronglifts 5x5</a> beginner program which focuses on the big 5 compounds exercices: Squat, Deadlift, Overhead Press, Barbell Row and Bench Press. <br />
+          Below, you can check my progress chart for each lift. 
+        </p>
         <div className="canvas-container">
           <Scatter data={data} options={options} />
         </div>
