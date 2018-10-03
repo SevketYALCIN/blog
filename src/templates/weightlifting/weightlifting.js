@@ -6,6 +6,8 @@ import { graphql } from 'gatsby'
 import { Button } from 'semantic-ui-react'
 import './button.min.css'
 import './weightlifting.scss'
+import DayPicker from 'react-day-picker'
+import 'react-day-picker/lib/style.css'
 
 class Lifting extends React.Component {
   // Datasets
@@ -105,7 +107,7 @@ class Lifting extends React.Component {
       title: {
         display: true,
         text: 'Stronglifts 5x5',
-        fontSize: 18
+        fontSize: 18,
       },
       tooltips: {
         mode: 'nearest',
@@ -159,9 +161,21 @@ class Lifting extends React.Component {
         <SEO {...indexSeo} />
         <h1>Weight Lifting</h1>
         <p>
-          I have started weight lifting in May 2018, following the <a href="https://stronglifts.com/5x5/" target="blank" title="Stronglifts 5x5">Stronglifts 5x5</a> beginner program which focuses on the big 5 compounds exercices: Squat, Deadlift, Overhead Press, Barbell Row and Bench Press. <br />
-          Below, you can check my progress chart for each lift. 
+          I have started lifting weights in May 2018, following the{' '}
+          <a
+            href="https://stronglifts.com/5x5/"
+            target="blank"
+            title="Stronglifts 5x5"
+          >
+            Stronglifts 5x5
+          </a>{' '}
+          beginner program which focuses on the big 5 compounds movements:
+          Squat, Deadlift, Overhead Press, Barbell Row and Bench Press. <br />
+          Below, you can check my progress chart and my activity calendar.
         </p>
+        <h2>
+          Progress Chart
+        </h2>
         <div className="canvas-container">
           <Scatter data={data} options={options} />
         </div>
@@ -209,6 +223,13 @@ class Lifting extends React.Component {
             Bench Press
           </Button>
         </div>
+        <h2>
+          Activity Calendar
+        </h2>
+        <DayPicker
+          showOutsideDays
+          selectedDays={this.squat.data.map(item => new Date(item.x))}
+        />
       </Layout>
     )
   }

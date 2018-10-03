@@ -24,3 +24,15 @@
 		}
   }
 }
+
+.DayPicker{
+	div:focus, span:focus {
+		outline: none;
+	}
+	.DayPicker-Day{
+		padding: 0.8em;
+	}
+	.DayPicker-Day--selected:not(.DayPicker-Day--outside){
+		background-color: #d04444 !important;
+	}
+}
