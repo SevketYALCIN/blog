@@ -61,13 +61,13 @@ class Lifting extends React.Component {
         this.setState({ data: [this.deadlift], currentlyShown: 2 })
         break
       case 3:
-        this.setState({ data: [this.bench], currentlyShown: 3 })
+        this.setState({ data: [this.row], currentlyShown: 3 })
         break
       case 4:
         this.setState({ data: [this.overhead], currentlyShown: 4 })
         break
       case 5:
-        this.setState({ data: [this.row], currentlyShown: 5 })
+        this.setState({ data: [this.bench], currentlyShown: 5 })
         break
       default:
         this.setState({
