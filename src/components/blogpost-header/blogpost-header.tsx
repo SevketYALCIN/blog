@@ -5,7 +5,7 @@ export default class BlogpostHeader extends React.Component<BlogpostHeaderProps>
   render(){
     return (
       <div style={{marginBottom: "0"}}>
-        <div style={{marginBottom: "5px"}}>
+        <div style={{marginBottom: "20px", marginTop: "-15px"}}>
           <span itemProp="datePublished">{this.props.date}</span>
           <span>・</span>
           <span itemProp="timeRequired">{`${this.props.readTime} min `}</span>

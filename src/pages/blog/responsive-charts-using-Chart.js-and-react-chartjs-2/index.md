@@ -223,3 +223,5 @@ export default App;
 ```
 # Conclusion
 That's it, thanks for reading. If you have any question or if something seems off, please leave a comment below.
+
+You can check the code of this tutorial on [my Github](https://github.com/SevketYALCIN/chartjs-react-article-code "chartjs-react-article-code Github").
