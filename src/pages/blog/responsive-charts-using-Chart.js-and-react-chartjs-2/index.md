@@ -4,8 +4,6 @@ date: "2018-10-11"
 tags: ["React", "Chart.js", "Responsive"]
 ---
 
-# Responsive charts using Chart.js and react-chartjs-2
-
 I have been testing and comparing a few charting libraries lately to use for [a new page featuring charts]("https://sevketyalcin.com/weightlifting/" "Weightlifting | Sevket Yalcin") on this website. 
 In the end, I have decided to use [Chart.js]("http://www.chartjs.org/" "Chart.js official website") because the charts are better looking, the animations are smooth, the documentation is really good and my overall experience was pleasant. The [react-chart-js-2]("https://github.com/jerairrest/react-chartjs-2" "react-chartjs-2 Github Page") wrapper even made it easier to build charts.
 So I decided to make this quick tutorial where we will build a simple responsive linear chart using `chart.js` and `react-chartjs-2`.
