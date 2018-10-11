@@ -6,16 +6,6 @@ export default class ShareButtons extends React.Component<ShareButtonsProps> {
     return(
       <div className="share-buttons">
         <iframe 
-          id="share-button"
-          title={`Share ${this.props.title} on Facebook`} 
-          src={`https://www.facebook.com/plugins/share_button.php?href=${this.props.url}&layout=button&size=small&mobile_iframe=true&width=73&height=20&appId`}
-          width="73"
-          height="20"
-          style={{border:"none",overflow:"hidden"}}
-          scrolling="no"
-          frameBorder="0"
-          data-allow="encrypted-media"/>
-        <iframe 
           title={`Share ${this.props.title} on Twitter`}
           id="tweet-button"
           frameBorder="0"
