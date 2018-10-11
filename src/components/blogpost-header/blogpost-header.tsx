@@ -11,9 +11,6 @@ export default class BlogpostHeader extends React.Component<BlogpostHeaderProps>
           <span itemProp="timeRequired">{`${this.props.readTime} min `}</span>
           <span>read</span>
         </div>
-        <ShareButtons 
-              title={this.props.title}
-              url={this.props.url}/>
       </div>
     )
   }
