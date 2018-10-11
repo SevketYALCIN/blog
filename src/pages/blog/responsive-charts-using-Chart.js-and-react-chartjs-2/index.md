@@ -20,7 +20,7 @@ And then add `Chart.js` and `react-chartjs-2`.
 ```
 yarn add react-chartjs-2 chart.js
 ```
-## Building a linear chart
+## Building a line chart
 Cleaning first, let's remove the CSS in the `App.css` file, clear the header HTML content inside the `App.js` file. Then, add a title inside the header tag and an article tag with a `canvas-container` class after the header.
 ```jsx
 import React, { Component } from 'react';
