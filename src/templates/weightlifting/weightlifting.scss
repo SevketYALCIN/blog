@@ -30,6 +30,7 @@
 		outline: none;
 	}
 	.DayPicker-Day{
+    border-radius: 0;
 		padding: 0.8em;
 	}
 	.DayPicker-Day--selected:not(.DayPicker-Day--outside){
