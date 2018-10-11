@@ -25,9 +25,6 @@ githubTheme.overrideThemeStyles = () => ({
   'a:not(.special-link):hover': {
     color: '#d04444',
   },
-  'h1': {
-    borderBottom: 'none'
-  }
 })
 
 const typography = new Typography(githubTheme)
