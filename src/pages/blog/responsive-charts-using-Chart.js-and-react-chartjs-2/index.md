@@ -117,11 +117,13 @@ export default App;
 ```
 You should now be able to see a green line.
 ## Making it responsive
-For our chart to be responsive, we need two things:
-- It has to be inside a fixed-height container.
-- The options have to be changed to disable the `maintainAspectRatio` option set to `true` by default.
+If you switch your browser to mobile mode, you will notice that our chart is already responsive. This is because Chart.js will adapt the height of the chart depending on the width since the `maintainAspectRatio` option is set to `true` by default. The problem is that the smaller the width gets, the harder it is to read our graph because of the small height.
 
-First, let's specify a fixed height for our container inside our `App.css` file.
+- So the first step is to set the `maintainAspectRatio` option `false`. We will then have a chart with an even smaller height because it will be rendered using the minimum height needed.
+
+- The second step is to set a height to the canvas' container. The chart will then be rendered using all the space given to him by his container. 
+
+Let's specify a fixed height for our container inside our `App.css` file.
 ```css
 .canvas-container {
   height: 60vh;
@@ -155,7 +157,6 @@ class App extends Component {
     }
 
     const options = {
-      responsive: true,				// Make it responsive
       maintainAspectRatio: false	// Don't maintain w/h ratio
     }
 
@@ -174,15 +175,14 @@ class App extends Component {
 
 export default App;
 ```
-We now have a responsive chart which will adapt itself according to the width.
+We now have a good looking and easy to read responsive chart.
 
-It is worth noting that the `maintainAspectRatio` and the `responsive` options can be specified globally and be applied to every chart by importing the `defaults` object from `react-chartjs-2` and changing the global values.
+It is worth noting that the `maintainAspectRatio` option can be specified globally and be applied to every chart by importing the `defaults` object from `react-chartjs-2` and changing the global values.
 ```jsx
 import React, { Component } from 'react';
 import './App.css';
 import { Line, defaults } from 'react-chartjs-2';
 
-defaults.global.responsive = true
 defaults.global.maintainAspectRatio = false
 
 class App extends Component {
