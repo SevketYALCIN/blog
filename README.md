@@ -23,3 +23,6 @@
 2. `yarn` or `npm install`
 3. `npm run dev`
 
+## Improve
+
+Feedback is more than appreciated via [Twitter](https://twitter.com/sev_yalcin)
