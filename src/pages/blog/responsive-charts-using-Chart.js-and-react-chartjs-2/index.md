@@ -119,7 +119,7 @@ You should now be able to see a green line.
 ## Making it responsive
 If you switch your browser to mobile mode, you will notice that our chart is already responsive. This is because Chart.js will adapt the height of the chart depending on the width since the `maintainAspectRatio` option is set to `true` by default. The problem is that the smaller the width gets, the harder it is to read our graph because of the small height.
 
-- So the first step is to set the `maintainAspectRatio` option `false`. We will then have a chart with an even smaller height because it will be rendered using the minimum height needed.
+- So the first step is to set the `maintainAspectRatio` option to `false`. We will then have a chart with an even smaller height because it will be rendered using the minimum height needed.
 
 - The second step is to set a height to the canvas' container. The chart will then be rendered using all the space given to him by his container. 
 
