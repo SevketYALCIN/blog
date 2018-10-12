@@ -4,36 +4,43 @@
 }
 
 .button-group {
-	margin: auto;
+  margin: auto;
   button.ui.button.toggle {
     width: calc((100% - 30px) / 3);
-		margin-top: 10px;
-		margin-right: 5px;
-		margin-left: 5px;
-		font-size: 0.9rem;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 0.9rem;
 
-		@media screen and (max-width: 750px) {
-			width: calc((100% - 10px) / 2);
-			margin-top: 5px;
-			margin-right: 2.5px;
-			margin-left: 2.5px;
-		}
+    @media screen and (max-width: 750px) {
+      width: calc((100% - 10px) / 2);
+      margin-top: 5px;
+      margin-right: 2.5px;
+      margin-left: 2.5px;
+    }
 
-		&.active {
-			background-color: #d04444 !important;
-		}
+    &.active {
+      background-color: #d04444 !important;
+    }
   }
 }
 
-.DayPicker{
-	div:focus, span:focus {
-		outline: none;
-	}
-	.DayPicker-Day{
+.DayPicker {
+  margin-left: -0.5em;
+  height: 380px;
+  div:focus,
+  span:focus {
+    outline: none;
+  }
+  .DayPicker-Day {
     border-radius: 0;
-		padding: 0.8em;
-	}
-	.DayPicker-Day--selected:not(.DayPicker-Day--outside){
-		background-color: #d04444 !important;
-	}
+    padding: 0.8em;
+  }
+  .DayPicker-Day--selected:not(.DayPicker-Day--outside) {
+    background-color: #d04444 !important;
+  }
+  .DayPicker-Month {
+    margin-top: 1em;
+    margin-left: 0;
+  }
 }
