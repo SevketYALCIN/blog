@@ -18,7 +18,7 @@ class Template extends React.Component<BaseTemplateProps> {
         title = (
           <h1>
             <span>
-            I'm <span className="name">Sevket Yalcin</span>, a developer currently living and working in Tokyo.
+            I'm <span className="name">Sevket Yalcin</span>, a developer currently living and working in Paris.
             </span>
           </h1>)
         break
