@@ -23,7 +23,7 @@ export default class Index extends React.Component {
               WORK
             </div>
             <div className="link-block-content">
-              <a href="https://www.forcia.com/" title="Forcia's website" target="blank">Forcia, Tokyo</a>
+              <a href="https://www.infinitesquare.com/" title="Infinite Square's website" target="blank">Infinite Square, Paris</a>
               <div>
                 Software engineer
               </div>
@@ -32,7 +32,7 @@ export default class Index extends React.Component {
               Previously
             </div>
             <div className="link-block-content">
-              <a href="https://www.infinitesquare.com/" title="Infinite Square's website" target="blank">Infinite Square, Paris</a>
+              <a href="https://www.forcia.com/" title="Forcia's website" target="blank">Forcia, Tokyo</a>
               <div>
                 Software engineer
               </div>
