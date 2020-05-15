@@ -38,7 +38,7 @@
     }
 
     .link-block-content {
-      .blog-links {
+      &.work, .blog-links {
         margin-bottom: 0.5rem;
       }
     }

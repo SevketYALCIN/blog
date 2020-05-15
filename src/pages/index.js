@@ -20,21 +20,18 @@ export default class Index extends React.Component {
         <LinkMenu>
           <div className="link-block">
             <div className="link-block-title">
-              WORK
+              WORK EXPERIENCE
             </div>
-            <div className="link-block-content">
+            <div className="link-block-content work">
               <a href="https://www.infinitesquare.com/" title="Infinite Square's website" target="blank">Infinite Square, Paris</a>
               <div>
-                Web developer
+                Web developer, 3 years
               </div>
             </div>
-            <div className="link-block-title">
-              Previously
-            </div>
-            <div className="link-block-content">
+            <div className="link-block-content work">
               <a href="https://www.forcia.com/" title="Forcia's website" target="blank">Forcia, Tokyo</a>
               <div>
-                Web developer
+                Web developer, 1 year
               </div>
             </div>
           </div>
