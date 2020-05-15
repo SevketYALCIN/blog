@@ -19,7 +19,9 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <div itemScope itemType="http://schema.org/Blog">
           <SEO {...indexSeo} />
-          <Bio />
+          {/* 
+          Hidden until improvements
+          <Bio /> */}
           {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
             const articleProps = {
               title: node.frontmatter.title || node.fields.slug,
