@@ -25,7 +25,7 @@ export default class Index extends React.Component {
             <div className="link-block-content">
               <a href="https://www.infinitesquare.com/" title="Infinite Square's website" target="blank">Infinite Square, Paris</a>
               <div>
-                Software engineer
+                Web developer
               </div>
             </div>
             <div className="link-block-title">
@@ -34,7 +34,7 @@ export default class Index extends React.Component {
             <div className="link-block-content">
               <a href="https://www.forcia.com/" title="Forcia's website" target="blank">Forcia, Tokyo</a>
               <div>
-                Software engineer
+                Web developer
               </div>
             </div>
           </div>
@@ -49,6 +49,8 @@ export default class Index extends React.Component {
               <div className="go-to-list"><Link className="see-more" to={'/blog/'} title={'See more'}>See more</Link></div>
             </div>
           </div>
+          {/* 
+          Hidden until improvments
           <div className="link-block">
             <div className="link-block-title">
               About me
@@ -56,7 +58,7 @@ export default class Index extends React.Component {
             <div className="link-block-content">
               <Link to={'/weightlifting/'} title={'Go to Weight Lifting page'}>Weight Lifting</Link>
             </div>
-          </div>
+          </div> */}
         </LinkMenu>
       </Layout>
     )
