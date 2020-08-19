@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Sevket Yalcin',
     author: 'Sevket Yalcin',
-    description: 'Full Stack Web Developer looking for a job in Tokyo. I build stuff on my free time and sometimes blog about it here.',
+    description: 'Full Stack Web Developer looking for a job.',
     siteUrl: 'https://sevketyalcin.com',
     twitter: '@sev_yalcin',
     image: 'https://lh3.googleusercontent.com/NUDV52VqjIcOIFLdaP_pOfb2qfJ7TnaR8-ysRw-BX4Gs4LhLTsygGy0Vmb9mWIvFSsYSHj_BnIs',
