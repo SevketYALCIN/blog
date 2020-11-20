@@ -4,10 +4,12 @@
   padding: 3rem 1.05rem;
 
   .header {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    .social-links {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
     margin-bottom: 2rem;
     h1,
