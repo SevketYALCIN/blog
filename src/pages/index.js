@@ -34,6 +34,7 @@ export default class Index extends React.Component {
                 Web developer, 1 year
               </div>
             </div>
+            <div className="go-to-list"><a rel="noreferrer" className="see-more" title="More on my resume" target="_blank" href={`CV_SEVKET_YALCIN_EN.pdf`}>More on my resume</a></div>
           </div>
           <div className="link-block">
             <div className="link-block-title">
