@@ -5,6 +5,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { BaseTemplateProps } from "../../models/template"
 import * as github from "./github.png"
+import * as linkedin from "./linkedin.png"
 import "./layout.scss"
 import * as mail from "./mail.png"
 import * as twitter from "./twitter.png"
@@ -38,6 +39,9 @@ class Template extends React.Component<BaseTemplateProps> {
         <div className="social-links">
           <a target="blank" href="https://github.com/SevketYALCIN" title="Go to my Github" className="special-link">
             <img src={github} alt='My Github' />
+          </a>
+          <a target="blank" href="https://www.linkedin.com/in/sevket-yalcin/" title="Go to my LinkedIn" className="special-link">
+            <img src={linkedin} alt='My LinkedIn' />
           </a>
           <a target="blank" href="https://twitter.com/sev_yalcin" title="Go to my Twitter" className="special-link">
             <img src={twitter} alt='My Twitter' />
