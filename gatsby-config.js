@@ -5,7 +5,8 @@ module.exports = {
     description: 'Full Stack Web Developer looking for a job.',
     siteUrl: 'https://sevketyalcin.com',
     twitter: '@sev_yalcin',
-    image: 'https://lh3.googleusercontent.com/NUDV52VqjIcOIFLdaP_pOfb2qfJ7TnaR8-ysRw-BX4Gs4LhLTsygGy0Vmb9mWIvFSsYSHj_BnIs',
+    image:
+      'https://lh3.googleusercontent.com/pw/AM-JKLX9Ctg4mC9UPtU8jn8D6e-cDFwgjjfIaNpBhbM21_jJixaViyweZBY5ySdFzN6MXAojB1UGMoS4gvpo22AMQi647cmy6A9ZDKOODVb7s1eRb5cU-1SmAFpKZfdN46QN3LThj9RDNVllTrzja9XpvGlZ=w940-h1254-no',
   },
   plugins: [
     {
@@ -52,13 +53,13 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
-        omitGoogleFont: true
+        omitGoogleFont: true,
       },
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-sitemap`
-    }
+      resolve: `gatsby-plugin-sitemap`,
+    },
   ],
 }
