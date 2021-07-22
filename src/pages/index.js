@@ -19,32 +19,71 @@ export default class Index extends React.Component {
         <SEO {...indexSeo} />
         <LinkMenu>
           <div className="link-block">
-            <div className="link-block-title">
-              WORK EXPERIENCE
+            <div className="link-block-title">WORK EXPERIENCE</div>
+            <div className="link-block-content work">
+              <a
+                title="Active Assurances's website"
+                target="blank"
+                href="https://www.activeassurances.fr/"
+              >
+                Active Assurances, Paris
+              </a>
+              <div>Full Stack Developer, since 2020</div>
             </div>
             <div className="link-block-content work">
-              <a href="https://www.infinitesquare.com/" title="Infinite Square's website" target="blank">Infinite Square, Paris</a>
-              <div>
-                Web developer, 3 years
-              </div>
+              <a
+                href="https://www.infinitesquare.com/"
+                title="Infinite Square's website"
+                target="blank"
+              >
+                Infinite Square, Paris
+              </a>
+              <div>Full Stack Developer, 3 years</div>
             </div>
             <div className="link-block-content work">
-              <a href="https://www.forcia.com/" title="Forcia's website" target="blank">Forcia, Tokyo</a>
-              <div>
-                Web developer, 1 year
-              </div>
+              <a
+                href="https://www.forcia.com/"
+                title="Forcia's website"
+                target="blank"
+              >
+                Forcia, Tokyo
+              </a>
+              <div>Software Engineer, 1 year</div>
             </div>
-            <div className="go-to-list"><a rel="noreferrer" className="see-more" title="More on my resume" target="_blank" href={`CV_SEVKET_YALCIN_EN.pdf`}>More on my resume</a></div>
+            <div className="go-to-list">
+              <a
+                rel="noreferrer"
+                className="see-more"
+                title="More on my LinkedIn profile"
+                target="_blank"
+                href="https://www.linkedin.com/in/sevket-yalcin/"
+              >
+                More on my LinkedIn profile
+              </a>
+            </div>
           </div>
           <div className="link-block">
-            <div className="link-block-title">
-              BLOG
-            </div>
+            <div className="link-block-title">BLOG</div>
             <div className="link-block-content">
-              {this.props.data.allMarkdownRemark.edges.map(({ node }, index) => {
-                return <div key={`link-${index}`} className="blog-links"><Link to={node.fields.slug} title={node.frontmatter.title}>{node.frontmatter.title}</Link></div>
-              })}
-              <div className="go-to-list"><Link className="see-more" to={'/blog/'} title={'See more'}>See more</Link></div>
+              {this.props.data.allMarkdownRemark.edges.map(
+                ({ node }, index) => {
+                  return (
+                    <div key={`link-${index}`} className="blog-links">
+                      <Link
+                        to={node.fields.slug}
+                        title={node.frontmatter.title}
+                      >
+                        {node.frontmatter.title}
+                      </Link>
+                    </div>
+                  )
+                }
+              )}
+              <div className="go-to-list">
+                <Link className="see-more" to={'/blog/'} title={'See more'}>
+                  See more
+                </Link>
+              </div>
             </div>
           </div>
           {/* 
