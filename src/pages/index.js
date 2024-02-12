@@ -22,13 +22,23 @@ export default class Index extends React.Component {
             <div className="link-block-title">WORK EXPERIENCE</div>
             <div className="link-block-content work">
               <a
+                title="Enygea's website"
+                target="blank"
+                href="https://www.enygea.com/en/"
+              >
+                Enygea
+              </a>
+              <div>Freelance Full Stack Developer, 6 months</div>
+            </div>
+            <div className="link-block-content work">
+              <a
                 title="Botify's website"
                 target="blank"
                 href="https://www.botify.com/"
               >
                 Botify, Paris
               </a>
-              <div>Freelance Frontend Developer, 6 months</div>
+              <div>Freelance Full Stack Developer, 6 months</div>
             </div>
             <div className="link-block-content work">
               <a
